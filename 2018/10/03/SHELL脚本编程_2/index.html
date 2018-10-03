@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习,SHELL,编程," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Seule" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="给出的那些shell脚本里, shell按照命令在脚本中出现的顺序依次进行处理。对顺序操作来说,这已经足够了,因为在这种操作环境下,你想要的就是所有的命令按照正确的顺序执行。然而,并非所有程序都如此操作。许多程序要求对shell脚本中的命令施加一些逻辑流程控制。有一类命令会根据条件使脚本跳过某些命令。这样的命令通常称为结构化命令(structured command)。">
+<meta name="keywords" content="学习,SHELL,编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SHELL脚本编程_2">
+<meta property="og:url" content="https://seule.cn/2018/10/03/SHELL脚本编程_2/index.html">
+<meta property="og:site_name" content="Seule">
+<meta property="og:description" content="给出的那些shell脚本里, shell按照命令在脚本中出现的顺序依次进行处理。对顺序操作来说,这已经足够了,因为在这种操作环境下,你想要的就是所有的命令按照正确的顺序执行。然而,并非所有程序都如此操作。许多程序要求对shell脚本中的命令施加一些逻辑流程控制。有一类命令会根据条件使脚本跳过某些命令。这样的命令通常称为结构化命令(structured command)。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-19T15:42:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SHELL脚本编程_2">
+<meta name="twitter:description" content="给出的那些shell脚本里, shell按照命令在脚本中出现的顺序依次进行处理。对顺序操作来说,这已经足够了,因为在这种操作环境下,你想要的就是所有的命令按照正确的顺序执行。然而,并非所有程序都如此操作。许多程序要求对shell脚本中的命令施加一些逻辑流程控制。有一类命令会根据条件使脚本跳过某些命令。这样的命令通常称为结构化命令(structured command)。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":"flase","async":"flase","transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://seule.cn/2018/10/03/SHELL脚本编程_2/"/>
+
+
+
+
+
+  <title>SHELL脚本编程_2 | Seule</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c02f20fcdc952de532242640f262bf9e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Seule</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">A Seule's Personal Blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/jianli" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            个人简历
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://seule.cn/2018/10/03/SHELL脚本编程_2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="范儿">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Seule">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">SHELL脚本编程_2</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-03T13:33:12+08:00">
+                2018-10-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SHELL/" itemprop="url" rel="index">
+                    <span itemprop="name">SHELL</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SHELL/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SHELL/学习/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>给出的那些shell脚本里, shell按照命令在脚本中出现的顺序依次进行处理。对顺序操作来说,这已经足够了,因为在这种操作环境下,你想要的就是所有的命令按照正确的顺序执行。然而,并非所有程序都如此操作。许多程序要求对shell脚本中的命令施加一些逻辑流程控制。有一类命令会根据条件使脚本跳过某些命令。这样的命令通常称为结构化命令(structured command)。<a id="more"></a></p>
+<h1 id="使用结构化命令"><a href="#使用结构化命令" class="headerlink" title="使用结构化命令"></a>使用结构化命令</h1><hr>
+<h2 id="使用if-then语句"><a href="#使用if-then语句" class="headerlink" title="使用if -then语句"></a>使用if -then语句</h2><p>最基本的结构化命令就是 if-then 语句。 if-then 语句有如下格式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if command</span><br><span class="line">then</span><br><span class="line">	commands</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<p>bash shell的 if 语句会运行 if 后面的那个命令。如果该命令的退出状态码是 0(该命令成功运行),位于 then 部分的命令就会被执行。如果该命令的退出状态码是其他值, then部分的命令就不会被执行,bash shell会继续执行脚本中的下一个命令。 fi 语句用来表示 if-then语句到此结束。</p>
+<p>有些脚本中看到过 if-then 语句的另一种形式:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if command; then</span><br><span class="line">	commands</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<p>通过把分号放在待求值的命令尾部,就可以将 then 语句放在同一行上了,这样看起来更像其他编程语言中的 if-then 语句。<br><em>在 then 部分,你可以使用不止一条命令。可以像在脚本中的其他地方一样在这里列出多条命令。bash shell会将这些命令当成一个块,如果 if 语句行的命令的退出状态值为 0 ,所有的命令都会被执行;如果 if 语句行的命令的退出状态不为 0 ,所有的命令都会被跳过。</em></p>
+<h2 id="if-then-else-语句"><a href="#if-then-else-语句" class="headerlink" title="if-then-else 语句"></a>if-then-else 语句</h2><p>在 if-then 语句中,不管命令是否成功执行,你都只有一种选择。如果命令返回一个非零退出状态码,bash shell会继续执行脚本中的下一条命令。在这种情况下,如果能够执行另一组命令就好了。这正是 if-then-else 语句的作用。if-then-else 语句在语句中提供了另外一组命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if command</span><br><span class="line">then</span><br><span class="line">	commands</span><br><span class="line">else</span><br><span class="line">	commands</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<p>当 if 语句中的命令返回退出状态码 0 时, then 部分中的命令会被执行,这跟普通的 if-then语句一样。当 if 语句中的命令返回非零退出状态码时,bash shell会执行 else 部分中的命令。</p>
+<h2 id="嵌套if"><a href="#嵌套if" class="headerlink" title="嵌套if"></a>嵌套if</h2><p>可以直接嵌套if结构，理论上支持多重嵌套，实际上程序员并不会放置超过三重，过多影响代码的逻辑性和可读性。<br>可以使用 else 部分的另一种形式: elif 。这样就不用再书写多个 if-then 语句了。 elif 使<br>用另一个 if-then 语句延续 else 部分。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if command1</span><br><span class="line">then</span><br><span class="line">	commands</span><br><span class="line">elif command2</span><br><span class="line">then</span><br><span class="line">	more commands</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<p>在 elif 语句中,紧跟其后的 else 语句属于 elif 代码块。它们并不属于之前的if-then 代码块。<br>可以继续将多个 elif 语句串起来,形成一个大的 if-then-elif 嵌套组合。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">if command1</span><br><span class="line">then</span><br><span class="line">	command set 1</span><br><span class="line">elif command2</span><br><span class="line">then</span><br><span class="line">	command set 2</span><br><span class="line">elif command3</span><br><span class="line">then</span><br><span class="line">	command set 3</span><br><span class="line">elif command4</span><br><span class="line">then</span><br><span class="line">	command set 4</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<h3 id="test-命令"><a href="#test-命令" class="headerlink" title="test 命令"></a>test 命令</h3><p>test 命令提供了在 if-then 语句中测试不同条件的途径。如果 test 命令中列出的条件成立,test 命令就会退出并返回退出状态码 0 。这样 if-then 语句就与其他编程语言中的 if-then 语句以类似的方式工作了。如果条件不成立, test 命令就会退出并返回非零的退出状态码,这使得if-then 语句不会再被执行。test 命令的格式非常简单。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test condition</span><br></pre></td></tr></table></figure></p>
+<p>condition 是 test 命令要测试的一系列参数和值。当用在 if-then 语句中时, test 命令看起来是这样的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if test condition</span><br><span class="line">then</span><br><span class="line">	commands</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<p>如果不写 test 命令的 condition 部分,它会以非零的退出状态码退出,并执行 else 语句块。<br>bash shell提供了另一种条件测试方法,无需在 if-then 语句中声明 test 命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if [ condition ]</span><br><span class="line">then</span><br><span class="line">	commands</span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<p>方括号定义了测试条件。注意,第一个方括号之后和第二个方括号之前必须加上一个空格,否则就会报错。<br>test 命令可以判断三类条件:</p>
+<ul>
+<li>数值比较</li>
+<li>字符串比较</li>
+<li>文件比较</li>
+</ul>
+<h4 id="数值比较"><a href="#数值比较" class="headerlink" title="数值比较"></a>数值比较</h4><p>使用 test 命令最常见的情形是对两个数值进行比较。下表列出了测试两个值时可用的条件参数。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">比较</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">n1 -eq n2</td>
+<td style="text-align:left">检查 n1 是否与 n2 相等</td>
+</tr>
+<tr>
+<td style="text-align:center">n1 -ge n2</td>
+<td style="text-align:left">检查 n1 是否大于或等于 n2</td>
+</tr>
+<tr>
+<td style="text-align:center">n1 -gt n2</td>
+<td style="text-align:left">检查 n1 是否大于 n2</td>
+</tr>
+<tr>
+<td style="text-align:center">n1 -le n2</td>
+<td style="text-align:left">检查 n1 是否小于或等于 n2</td>
+</tr>
+<tr>
+<td style="text-align:center">n1 -lt n2</td>
+<td style="text-align:left">检查 n1 是否小于 n2</td>
+</tr>
+<tr>
+<td style="text-align:center">n1 -ne n2</td>
+<td style="text-align:left">检查 n1 是否不等于 n2</td>
+</tr>
+</tbody>
+</table>
+<h4 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h4><p>条件测试还允许比较字符串值。比较字符串比较烦琐,你马上就会看到。下表列出了可用的字符串比较功能。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">比较</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">str1 = str2</td>
+<td style="text-align:left">检查 str1 是否和 str2 相同</td>
+</tr>
+<tr>
+<td style="text-align:center">str1 != str2</td>
+<td style="text-align:left">检查 str1 是否和 str2 不同</td>
+</tr>
+<tr>
+<td style="text-align:center">str1 &lt; str2</td>
+<td style="text-align:left">检查 str1 是否比 str2 小</td>
+</tr>
+<tr>
+<td style="text-align:center">str1 &gt; str2</td>
+<td style="text-align:left">检查 str1 是否比 str2 大</td>
+</tr>
+<tr>
+<td style="text-align:center">-n str1</td>
+<td style="text-align:left">检查 str1 的长度是否非0</td>
+</tr>
+<tr>
+<td style="text-align:center">-z str1</td>
+<td style="text-align:left">检查 str1 的长度是否为0</td>
+</tr>
+</tbody>
+</table>
+<h5 id="字符串相等性"><a href="#字符串相等性" class="headerlink" title="字符串相等性"></a>字符串相等性</h5><p>字符串的相等和不等条件不言自明,很容易看出两个字符串值是否相同，字符串不等条件也可以判断两个字符串是否有相同的值。记住,在比较字符串的相等性时,比较测试会将所有的标点和大小写情况都考虑在内。</p>
+<h4 id="字符串顺序"><a href="#字符串顺序" class="headerlink" title="字符串顺序"></a>字符串顺序</h4><p>要测试一个字符串是否比另一个字符串大就是麻烦的开始。当要开始使用测试条件的大于或小于功能时,就会出现两个经常困扰shell程序员的问题:</p>
+<ul>
+<li>大于号和小于号必须转义,否则shell会把它们当作重定向符号,把字符串值当作文件名</li>
+<li>大于和小于顺序和 sort 命令所采用的不同<br>在编写脚本时,第一条可能会导致一个不易察觉的严重问题。</li>
+</ul>
+<p><em>test 命令和测试表达式使用标准的数学比较符号来表示字符串比较,而用文本代码来表示数值比较。这个细微的特性被很多程序员理解反了。如果你对数值使用了数学运算符号,shell会将它们当成字符串值,可能无法得到正确的结果。</em></p>
+<h5 id="检查字符串大小"><a href="#检查字符串大小" class="headerlink" title="检查字符串大小"></a>检查字符串大小</h5><p>-n 和 -z 可以检查一个变量是否含有数据。空的和未初始化的变量会对shell脚本测试造成灾难性的影响。如果不是很确定一个变量的内容,最好在将其用于数值或字符串比较之前先通过 -n 或 -z 来测试一下变量是否含有值。</p>
+<h4 id="文件比较"><a href="#文件比较" class="headerlink" title="文件比较"></a>文件比较</h4><p>最后一类比较测试很有可能是shell编程中最为强大、也是用得最多的比较形式。它允许你测试Linux文件系统上文件和目录的状态。下表列出了这些比较。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">比较</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-d file</td>
+<td style="text-align:left">检查 file 是否存在并是一个目录</td>
+</tr>
+<tr>
+<td style="text-align:center">-e file</td>
+<td style="text-align:left">检查 file 是否存在</td>
+</tr>
+<tr>
+<td style="text-align:center">-f file</td>
+<td style="text-align:left">检查 file 是否存在并是一个文件</td>
+</tr>
+<tr>
+<td style="text-align:center">-r file</td>
+<td style="text-align:left">检查 file 是否存在并可读</td>
+</tr>
+<tr>
+<td style="text-align:center">-s file</td>
+<td style="text-align:left">检查 file 是否存在并非空</td>
+</tr>
+<tr>
+<td style="text-align:center">-w file</td>
+<td style="text-align:left">检查 file 是否存在并可写</td>
+</tr>
+<tr>
+<td style="text-align:center">-x file</td>
+<td style="text-align:left">检查 file 是否存在并可执行</td>
+</tr>
+<tr>
+<td style="text-align:center">-O file</td>
+<td style="text-align:left">检查 file 是否存在并属当前用户所有</td>
+</tr>
+<tr>
+<td style="text-align:center">-G file</td>
+<td style="text-align:left">检查 file 是否存在并且默认组与当前用户相同</td>
+</tr>
+<tr>
+<td style="text-align:center">file1 -nt file2</td>
+<td style="text-align:left">检查 file1 是否比 file2 新</td>
+</tr>
+<tr>
+<td style="text-align:center">file1 -ot file2</td>
+<td style="text-align:left">检查 file1 是否比 file2 旧</td>
+</tr>
+</tbody>
+</table>
+<h5 id="检查目录"><a href="#检查目录" class="headerlink" title="检查目录"></a>检查目录</h5><p>-d 测试会检查指定的目录是否存在于系统中。如果你打算将文件写入目录或是准备切换到某个目录中,先进行测试总是件好事情。</p>
+<h5 id="检查对象是否存在"><a href="#检查对象是否存在" class="headerlink" title="检查对象是否存在"></a>检查对象是否存在</h5><p>-e 比较允许你的脚本代码在使用文件或目录前先检查它们是否存在。</p>
+<h5 id="检查文件"><a href="#检查文件" class="headerlink" title="检查文件"></a>检查文件</h5><p>-e 比较可用于文件和目录。要确定指定对象为文件,必须用 -f 比较。</p>
+<h5 id="检查是否可读"><a href="#检查是否可读" class="headerlink" title="检查是否可读"></a>检查是否可读</h5><p>在尝试从文件中读取数据之前,最好先测试一下文件是否可读。可以使用 -r 比较测试。</p>
+<h5 id="检查空文件"><a href="#检查空文件" class="headerlink" title="检查空文件"></a>检查空文件</h5><p>应该用 -s 比较来检查文件是否为空,尤其是在不想删除非空文件的时候。要留心的是,当-s 比较成功时,说明文件中有数据。</p>
+<h5 id="检查是否可写"><a href="#检查是否可写" class="headerlink" title="检查是否可写"></a>检查是否可写</h5><p>-w 比较会判断你对文件是否有可写权限。</p>
+<h5 id="检查文件是否可以执行"><a href="#检查文件是否可以执行" class="headerlink" title="检查文件是否可以执行"></a>检查文件是否可以执行</h5><p>-x 比较是判断特定文件是否有执行权限的一个简单方法。虽然可能大多数命令用不到它,但如果你要在shell脚本中运行大量脚本,它就能发挥作用。</p>
+<h5 id="检查所属关系"><a href="#检查所属关系" class="headerlink" title="检查所属关系"></a>检查所属关系</h5><p>-O 比较可以测试出你是否是文件的属主。</p>
+<h5 id="检查默认属组关系"><a href="#检查默认属组关系" class="headerlink" title="检查默认属组关系"></a>检查默认属组关系</h5><p>-G 比较会检查文件的默认组,如果它匹配了用户的默认组,则测试成功。由于 -G 比较只会<br>检查默认组而非用户所属的所有组。</p>
+<h5 id="检查文件日期"><a href="#检查文件日期" class="headerlink" title="检查文件日期"></a>检查文件日期</h5><p>最后一组方法用来对两个文件的创建日期进行比较。这在编写软件安装脚本时非常有用。有时候,你不会愿意安装一个比系统上已有文件还要旧的文件。</p>
+<p>-nt 比较会判定一个文件是否比另一个文件新。如果文件较新,那意味着它的文件创建日期更近。 -ot 比较会判定一个文件是否比另一个文件旧。如果文件较旧,意味着它的创建日期更早。</p>
+<hr>
+<h2 id="复合条件测试"><a href="#复合条件测试" class="headerlink" title="复合条件测试"></a>复合条件测试</h2><p>if-then 语句允许你使用布尔逻辑来组合测试。有两种布尔运算符可用:</p>
+<ul>
+<li>[ condition1 ] &amp;&amp; [ condition2 ]</li>
+<li>[ condition1 ] || [ condition2 ]</li>
+</ul>
+<p>第一种布尔运算使用 AND 布尔运算符来组合两个条件。要让 then 部分的命令执行,两个条件都必须满足。<br><em>!布尔逻辑是一种能够将可能的返回值简化为 TRUE 或 FALSE 的方法。</em></p>
+<p>第二种布尔运算使用 OR 布尔运算符来组合两个条件。如果任意条件为 TRUE , then 部分的命<br>令就会执行。</p>
+<hr>
+<h2 id="if-then-的高级特性"><a href="#if-then-的高级特性" class="headerlink" title="if-then 的高级特性"></a>if-then 的高级特性</h2><p>bash shell提供了两项可在 if-then 语句中使用的高级特性:</p>
+<ul>
+<li>用于数学表达式的双括号</li>
+<li>用于高级字符串处理功能的双方括号</li>
+</ul>
+<h3 id="使用双括号-13"><a href="#使用双括号-13" class="headerlink" title="使用双括号 13"></a>使用双括号 13</h3><p>双括号命令允许你在比较过程中使用高级数学表达式。 test 命令只能在比较中使用简单的算术操作。双括号命令提供了更多的数学符号,这些符号对于用过其他编程语言的程序员而言并不陌生。双括号命令的格式如下:<br><code>(( expression ))</code><br>expression 可以是任意的数学赋值或比较表达式。除了 test 命令使用的标准数学运算符,下表列出了双括号命令中会用到的其他运算符。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">val++</td>
+<td style="text-align:left">后增</td>
+</tr>
+<tr>
+<td style="text-align:center">val–</td>
+<td style="text-align:left">后减</td>
+</tr>
+<tr>
+<td style="text-align:center">++val</td>
+<td style="text-align:left">先增</td>
+</tr>
+<tr>
+<td style="text-align:center">–val</td>
+<td style="text-align:left">先减</td>
+</tr>
+<tr>
+<td style="text-align:center">!</td>
+<td style="text-align:left">逻辑求反</td>
+</tr>
+<tr>
+<td style="text-align:center">~</td>
+<td style="text-align:left">位求反</td>
+</tr>
+<tr>
+<td style="text-align:center">**</td>
+<td style="text-align:left">幂运算</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&lt;</td>
+<td style="text-align:left">左位移</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;&gt;</td>
+<td style="text-align:left">右位移</td>
+</tr>
+<tr>
+<td style="text-align:center">&amp;</td>
+<td style="text-align:left">位布尔和</td>
+</tr>
+<tr>
+<td style="text-align:center">｜</td>
+<td style="text-align:left">位布尔或</td>
+</tr>
+<tr>
+<td style="text-align:center">&amp;&amp;</td>
+<td style="text-align:left">逻辑和</td>
+</tr>
+<tr>
+<td style="text-align:center">｜｜</td>
+<td style="text-align:left">逻辑或</td>
+</tr>
+</tbody>
+</table>
+<p>可以在 if 语句中用双括号命令,也可以在脚本中的普通命令里使用来赋值。<br><em>注意,不需要将双括号中表达式里的大于号转义。这是双括号命令提供的另一个高级特性。</em></p>
+<h3 id="使用双方括号"><a href="#使用双方括号" class="headerlink" title="使用双方括号"></a>使用双方括号</h3><p>双方括号命令提供了针对字符串比较的高级特性。双方括号命令的格式如下:<br><code>[[ expression ]]</code><br>双方括号里的 expression 使用了 test 命令中采用的标准字符串比较。但它提供了 test 命令未提供的另一个特性——模式匹配(pattern matching)。<br>在模式匹配中,可以定义一个正则表达式来匹配字符串值。</p>
+<h2 id="case-命令"><a href="#case-命令" class="headerlink" title="case 命令"></a>case 命令</h2><p>有了 case 命令,就不需要再写出所有的 elif 语句来不停地检查同一个变量的值了。 case 命令会采用列表格式来检查单个变量的多个值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">case variable in</span><br><span class="line">pattern1 | pattern2) commands1;;</span><br><span class="line">pattern3) commands2;;</span><br><span class="line">*) default commands;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure></p>
+<p>case 命令会将指定的变量与不同模式进行比较。如果变量和模式是匹配的,那么shell会执行为该模式指定的命令。可以通过竖线操作符在一行中分隔出多个模式模式。星号会捕获所有与已知模式不匹配的值。case 命令提供了一个更清晰的方法来为变量每个可能的值指定不同的选项。</p>
+<p><em>可能是心情好，今晚突然想写博客，就更新了这篇。我和我女友和好了，真的很开心，希望不会再分开了吧</em></p>
+
+      
+    </div>
+    
+    
+    
+
+<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2018/10/03/SHELL脚本编程_2/">SHELL脚本编程_2</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 范儿 的个人博客">范儿</a></p>
+  <p><span>发布时间:</span>2018年10月03日 - 13:10</p>
+  <p><span>最后更新:</span>2018年09月19日 - 23:09</p>
+  <p><span>原始链接:</span><a href="/2018/10/03/SHELL脚本编程_2/" title="SHELL脚本编程_2">https://seule.cn/2018/10/03/SHELL脚本编程_2/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://seule.cn/2018/10/03/SHELL脚本编程_2/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+
+      
+</div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>^_^</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="范儿 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="范儿 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+            -------------本文结束
+            <i class="fa fa-paw"></i>
+            感谢您的阅读-------------
+        </div>
+    
+</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习/" rel="tag"><i class="fa fa-tag"></i> 学习</a>
+          
+            <a href="/tags/SHELL/" rel="tag"><i class="fa fa-tag"></i> SHELL</a>
+          
+            <a href="/tags/编程/" rel="tag"><i class="fa fa-tag"></i> 编程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/03/Functional Programming For The Rest of Us/" rel="next" title="Functional Programming For The Rest of Us">
+                <i class="fa fa-chevron-left"></i> Functional Programming For The Rest of Us
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/03/SHELL提示符学习汇总_１/" rel="prev" title="SHELL 提示符学习汇总">
+                SHELL 提示符学习汇总 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="范儿" />
+            
+              <p class="site-author-name" itemprop="name">范儿</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Seule-Seule" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:f18811010711@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im/user/5b638ae0f265da0fb01889b9" target="_blank" title="掘金">
+                      
+                        <i class="fa fa-fw fa-juejin"></i>掘金</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用结构化命令"><span class="nav-number">1.</span> <span class="nav-text">使用结构化命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用if-then语句"><span class="nav-number">1.1.</span> <span class="nav-text">使用if -then语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if-then-else-语句"><span class="nav-number">1.2.</span> <span class="nav-text">if-then-else 语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌套if"><span class="nav-number">1.3.</span> <span class="nav-text">嵌套if</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#test-命令"><span class="nav-number">1.3.1.</span> <span class="nav-text">test 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数值比较"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">数值比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串比较"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">字符串比较</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串相等性"><span class="nav-number">1.3.1.2.1.</span> <span class="nav-text">字符串相等性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串顺序"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">字符串顺序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#检查字符串大小"><span class="nav-number">1.3.1.3.1.</span> <span class="nav-text">检查字符串大小</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件比较"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">文件比较</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#检查目录"><span class="nav-number">1.3.1.4.1.</span> <span class="nav-text">检查目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#检查对象是否存在"><span class="nav-number">1.3.1.4.2.</span> <span class="nav-text">检查对象是否存在</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#检查文件"><span class="nav-number">1.3.1.4.3.</span> <span class="nav-text">检查文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#检查是否可读"><span class="nav-number">1.3.1.4.4.</span> <span class="nav-text">检查是否可读</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#检查空文件"><span class="nav-number">1.3.1.4.5.</span> <span class="nav-text">检查空文件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#检查是否可写"><span class="nav-number">1.3.1.4.6.</span> <span class="nav-text">检查是否可写</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#检查文件是否可以执行"><span class="nav-number">1.3.1.4.7.</span> <span class="nav-text">检查文件是否可以执行</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#检查所属关系"><span class="nav-number">1.3.1.4.8.</span> <span class="nav-text">检查所属关系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#检查默认属组关系"><span class="nav-number">1.3.1.4.9.</span> <span class="nav-text">检查默认属组关系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#检查文件日期"><span class="nav-number">1.3.1.4.10.</span> <span class="nav-text">检查文件日期</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复合条件测试"><span class="nav-number">1.4.</span> <span class="nav-text">复合条件测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if-then-的高级特性"><span class="nav-number">1.5.</span> <span class="nav-text">if-then 的高级特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用双括号-13"><span class="nav-number">1.5.1.</span> <span class="nav-text">使用双括号 13</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用双方括号"><span class="nav-number">1.5.2.</span> <span class="nav-text">使用双方括号</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#case-命令"><span class="nav-number">1.6.</span> <span class="nav-text">case 命令</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">范儿</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="flase"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="flase"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="flase"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="flase"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

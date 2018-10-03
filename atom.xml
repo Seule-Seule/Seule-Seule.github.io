@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Seule</title>
+  
+  <subtitle>A Seule&#39;s Personal Blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://seule.cn/"/>
+  <updated>2018-09-20T08:39:03.000Z</updated>
+  <id>https://seule.cn/</id>
+  
+  <author>
+    <name>范儿</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据的动态储存空间分配</title>
+    <link href="https://seule.cn/2018/10/03/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8A%A8%E6%80%81%E5%82%A8%E5%AD%98%E7%A9%BA%E9%97%B4%E5%88%86%E9%85%8D/"/>
+    <id>https://seule.cn/2018/10/03/数据的动态储存空间分配/</id>
+    <published>2018-10-03T05:33:12.727Z</published>
+    <updated>2018-09-20T08:39:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在程序设计和编制时不知道数据的数量,在程序运行时确定了数据的数量后再为其分配存储空间，具有灵活,易扩展的优点。
+    
+    </summary>
+    
+      <category term="C语言" scheme="https://seule.cn/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="学习" scheme="https://seule.cn/categories/C%E8%AF%AD%E8%A8%80/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="算法" scheme="https://seule.cn/categories/C%E8%AF%AD%E8%A8%80/%E5%AD%A6%E4%B9%A0/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="编程" scheme="https://seule.cn/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="C语言" scheme="https://seule.cn/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11个免费高清图片下载站</title>
+    <link href="https://seule.cn/2018/10/03/11%E4%B8%AA%E5%85%8D%E8%B4%B9%E9%AB%98%E6%B8%85%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD%E7%AB%99/"/>
+    <id>https://seule.cn/2018/10/03/11个免费高清图片下载站/</id>
+    <published>2018-10-03T05:33:12.727Z</published>
+    <updated>2018-09-16T13:22:22.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当你需要制作PPT、海报或者微信公众号图文，以及其他平面设计的时候，通常可能需要一些高清又好看的图片。然而除了百度，你还有其他找图的方式吗？视频中，我们提供了五大常用图片资源下载网站，下文，我列出了十一个清单。
+    
+    </summary>
+    
+      <category term="高效率生活" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="技巧" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="高清" scheme="https://seule.cn/tags/%E9%AB%98%E6%B8%85/"/>
+    
+      <category term="图片" scheme="https://seule.cn/tags/%E5%9B%BE%E7%89%87/"/>
+    
+      <category term="下载" scheme="https://seule.cn/tags/%E4%B8%8B%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>5个简历模板下载及制作网站</title>
+    <link href="https://seule.cn/2018/10/03/5%E4%B8%AA%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%88%B6%E4%BD%9C%E7%BD%91%E7%AB%99/"/>
+    <id>https://seule.cn/2018/10/03/5个简历模板下载及制作网站/</id>
+    <published>2018-10-03T05:33:12.727Z</published>
+    <updated>2018-09-16T13:24:05.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;不管是初入社会的菜鸟还是步入职场多年的老司机，你或许都需要一份能够代表自己的简历。&lt;/p&gt;
+&lt;p&gt;然而，大多数人都为简历的内容和设计伤透脑筋，或者在寻找模板的过程当中浪费太多时间，这里，我们为大家推荐几款还不错的简历模板下载和简历在线制作网站。
+    
+    </summary>
+    
+      <category term="高效率生活" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="技巧" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="简历" scheme="https://seule.cn/tags/%E7%AE%80%E5%8E%86/"/>
+    
+      <category term="模板" scheme="https://seule.cn/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="职场" scheme="https://seule.cn/tags/%E8%81%8C%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PPT制作技巧汇总</title>
+    <link href="https://seule.cn/2018/10/03/PPT%E5%88%B6%E4%BD%9C%E6%8A%80%E5%B7%A7%E6%B1%87%E6%80%BB/"/>
+    <id>https://seule.cn/2018/10/03/PPT制作技巧汇总/</id>
+    <published>2018-10-03T05:33:12.727Z</published>
+    <updated>2018-09-16T13:24:54.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;对于很多人来说做ppt的时候往往会感到无从下手，这个时候你就需要一个完整的作品，或者一张具有设计感的海报，来激发你体内的洪荒之力。
+    
+    </summary>
+    
+      <category term="高效率生活" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="技巧" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="模板" scheme="https://seule.cn/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
+      <category term="PPT" scheme="https://seule.cn/tags/PPT/"/>
+    
+      <category term="技巧" scheme="https://seule.cn/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+      <category term="美化" scheme="https://seule.cn/tags/%E7%BE%8E%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SHELL脚本编程_1</title>
+    <link href="https://seule.cn/2018/10/03/SHELL%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B_1/"/>
+    <id>https://seule.cn/2018/10/03/SHELL脚本编程_1/</id>
+    <published>2018-10-03T05:33:12.727Z</published>
+    <updated>2018-09-18T08:45:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我已经了解了如何使用shell的命令行界面提示符来输入命令和查看命令的结果。shell脚本的优点在于输入多个命令并处理每个命令的结果,甚至需要将一个命令的结果传给另一个命令。shell可以让我将多个命令串起来,一次执行完成。
+    
+    </summary>
+    
+      <category term="学习" scheme="https://seule.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="SHELL" scheme="https://seule.cn/categories/%E5%AD%A6%E4%B9%A0/SHELL/"/>
+    
+    
+      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="SHELL" scheme="https://seule.cn/tags/SHELL/"/>
+    
+      <category term="脚本" scheme="https://seule.cn/tags/%E8%84%9A%E6%9C%AC/"/>
+    
+      <category term="编程" scheme="https://seule.cn/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我是怎么找到电子书的</title>
+    <link href="https://seule.cn/2018/10/03/%E6%88%91%E6%98%AF%E6%80%8E%E4%B9%88%E6%89%BE%E5%88%B0%E7%94%B5%E5%AD%90%E4%B9%A6%E7%9A%84/"/>
+    <id>https://seule.cn/2018/10/03/我是怎么找到电子书的/</id>
+    <published>2018-10-03T05:33:12.727Z</published>
+    <updated>2018-09-16T13:24:32.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;不论是娱乐用的、还是专业数据，我都能找得着，就是因为这些网站啦！
+    
+    </summary>
+    
+      <category term="高效率生活" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="技巧" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="电子书" scheme="https://seule.cn/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
+    
+      <category term="经验" scheme="https://seule.cn/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="搜索" scheme="https://seule.cn/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+      <category term="Seule" scheme="https://seule.cn/tags/Seule/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>5个学术文献资料推荐网站</title>
+    <link href="https://seule.cn/2018/10/03/5%E4%B8%AA%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE%E8%B5%84%E6%96%99%E6%8E%A8%E8%8D%90%E7%BD%91%E7%AB%99/"/>
+    <id>https://seule.cn/2018/10/03/5个学术文献资料推荐网站/</id>
+    <published>2018-10-03T05:33:12.727Z</published>
+    <updated>2018-09-16T13:23:13.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果你在写作和查询论文的时候还在简单地使用百度搜索，想用知网又因为内容付费而望而却步，那么今天我们推荐的以下几个网站，也许可以帮到你。
+    
+    </summary>
+    
+      <category term="高效率生活" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="技巧" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="学术文献" scheme="https://seule.cn/tags/%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE/"/>
+    
+      <category term="资料" scheme="https://seule.cn/tags/%E8%B5%84%E6%96%99/"/>
+    
+      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github了解--Git指令</title>
+    <link href="https://seule.cn/2018/10/03/Github%E4%BA%86%E8%A7%A3--Git%E6%8C%87%E4%BB%A4/"/>
+    <id>https://seule.cn/2018/10/03/Github了解--Git指令/</id>
+    <published>2018-10-03T05:33:12.727Z</published>
+    <updated>2018-09-16T13:05:32.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;Git 仓库管理功能是 GitHub 的核心。因此,使用 GitHub 之前必须先掌握 Git 的相关知识,同时本地的设备还要安装 Git 的环境。这篇文章就写写安装使用 Git 所需的知识及各种设置。
+    
+    </summary>
+    
+      <category term="Git" scheme="https://seule.cn/categories/Git/"/>
+    
+      <category term="Github" scheme="https://seule.cn/categories/Git/Github/"/>
+    
+      <category term="学习" scheme="https://seule.cn/categories/Git/Github/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Giehub学习" scheme="https://seule.cn/tags/Giehub%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Git指令" scheme="https://seule.cn/tags/Git%E6%8C%87%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SHELL 提示符学习汇总_2</title>
+    <link href="https://seule.cn/2018/10/03/SHELL%20%E6%8F%90%E7%A4%BA%E7%AC%A6%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB_2/"/>
+    <id>https://seule.cn/2018/10/03/SHELL 提示符学习汇总_2/</id>
+    <published>2018-10-03T05:33:12.727Z</published>
+    <updated>2018-09-16T13:22:47.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上一篇更新到重定向命令，后来感觉也没怎么用到那些命令。不过既然是技术博客、为了防止忘记，我还是会把一些不一定会用到的命令记录下来，以备以后查阅！
+    
+    </summary>
+    
+      <category term="SHELL" scheme="https://seule.cn/categories/SHELL/"/>
+    
+      <category term="学习" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="命令行" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+    
+      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="shell" scheme="https://seule.cn/tags/shell/"/>
+    
+      <category term="提示符" scheme="https://seule.cn/tags/%E6%8F%90%E7%A4%BA%E7%AC%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SHELL 提示符学习汇总</title>
+    <link href="https://seule.cn/2018/10/03/SHELL%E6%8F%90%E7%A4%BA%E7%AC%A6%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB_%EF%BC%91/"/>
+    <id>https://seule.cn/2018/10/03/SHELL提示符学习汇总_１/</id>
+    <published>2018-10-03T05:33:12.727Z</published>
+    <updated>2018-09-16T13:23:35.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;学习Linux，怎么能不会命令行呢？本文是对Linux命令行的学习过程记录。
+    
+    </summary>
+    
+      <category term="SHELL" scheme="https://seule.cn/categories/SHELL/"/>
+    
+      <category term="学习" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="命令行" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+    
+      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="shell" scheme="https://seule.cn/tags/shell/"/>
+    
+      <category term="提示符" scheme="https://seule.cn/tags/%E6%8F%90%E7%A4%BA%E7%AC%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SHELL脚本编程_2</title>
+    <link href="https://seule.cn/2018/10/03/SHELL%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B_2/"/>
+    <id>https://seule.cn/2018/10/03/SHELL脚本编程_2/</id>
+    <published>2018-10-03T05:33:12.727Z</published>
+    <updated>2018-09-19T15:42:19.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;给出的那些shell脚本里, shell按照命令在脚本中出现的顺序依次进行处理。对顺序操作来说,这已经足够了,因为在这种操作环境下,你想要的就是所有的命令按照正确的顺序执行。然而,并非所有程序都如此操作。许多程序要求对shell脚本中的命令施加一些逻辑流程控制。有一类命令会根据条件使脚本跳过某些命令。这样的命令通常称为结构化命令(structured command)。
+    
+    </summary>
+    
+      <category term="SHELL" scheme="https://seule.cn/categories/SHELL/"/>
+    
+      <category term="学习" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="编程" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="SHELL" scheme="https://seule.cn/tags/SHELL/"/>
+    
+      <category term="编程" scheme="https://seule.cn/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Functional Programming For The Rest of Us</title>
+    <link href="https://seule.cn/2018/10/03/Functional%20Programming%20For%20The%20Rest%20of%20Us/"/>
+    <id>https://seule.cn/2018/10/03/Functional Programming For The Rest of Us/</id>
+    <published>2018-10-03T05:33:12.727Z</published>
+    <updated>2018-09-25T13:52:39.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;本文及翻译摘自Github-justjavac（迷渡）&quot;&gt;&lt;a href=&quot;#本文及翻译摘自Github-justjavac（迷渡）&quot; class=&quot;headerlink&quot; title=&quot;本文及翻译摘自Github@justjavac（迷渡） &quot;&gt;&lt;/a&gt;本文及翻译摘自Github&lt;a href=&quot;https://github.com/justjavac/free-programming-books-zh_CN&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@justjavac（迷渡）&lt;/a&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="https://seule.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Functional" scheme="https://seule.cn/tags/Functional/"/>
+    
+      <category term="Programming" scheme="https://seule.cn/tags/Programming/"/>
+    
+      <category term="原文" scheme="https://seule.cn/tags/%E5%8E%9F%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>傻瓜函数式编程</title>
+    <link href="https://seule.cn/2018/10/03/%E5%82%BB%E7%93%9C%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    <id>https://seule.cn/2018/10/03/傻瓜函数式编程/</id>
+    <published>2018-10-03T05:33:12.727Z</published>
+    <updated>2018-09-25T13:50:41.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;本文及翻译摘自Github-justjavac（迷渡）&quot;&gt;&lt;a href=&quot;#本文及翻译摘自Github-justjavac（迷渡）&quot; class=&quot;headerlink&quot; title=&quot;本文及翻译摘自Github@justjavac（迷渡） &quot;&gt;&lt;/a&gt;本文及翻译摘自Github&lt;a href=&quot;https://github.com/justjavac/free-programming-books-zh_CN&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@justjavac（迷渡）&lt;/a&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="https://seule.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="原文" scheme="https://seule.cn/tags/%E5%8E%9F%E6%96%87/"/>
+    
+      <category term="函数式编程" scheme="https://seule.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+</feed>
