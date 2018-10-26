@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Seule">
 <meta property="og:description" content="Raspberry Pi(中文名为“树莓派”,简写为RPi，(或者RasPi / RPI) [1]  是为学习计算机编程教育而设计)，只有信用卡大小的微型电脑，其系统基于Linux。随着Windows 10 IoT的发布，我们也将可以用上运行Windows的树莓派。自问世以来，受众多计算机发烧友和创客的追捧，曾经一“派”难求。别看其外表“娇小”，内“心”却很强大，视频、音频等功能通通皆有，可谓是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-26T23:49:55.712Z">
+<meta property="og:updated_time" content="2018-10-26T23:58:34.271Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树梅派安装">
 <meta name="twitter:description" content="Raspberry Pi(中文名为“树莓派”,简写为RPi，(或者RasPi / RPI) [1]  是为学习计算机编程教育而设计)，只有信用卡大小的微型电脑，其系统基于Linux。随着Windows 10 IoT的发布，我们也将可以用上运行Windows的树莓派。自问世以来，受众多计算机发烧友和创客的追捧，曾经一“派”难求。别看其外表“娇小”，内“心”却很强大，视频、音频等功能通通皆有，可谓是">
@@ -338,7 +338,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-27T07:50:03+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-27T07:58:34+08:00">
                 2018-10-27
               </time>
             
@@ -410,11 +410,32 @@
 
       
         <hr>
-<p><em>Raspberry Pi(中文名为“树莓派”,简写为RPi，(或者RasPi / RPI) [1]  是为学习计算机编程教育而设计)，只有信用卡大小的微型电脑，其系统基于Linux。随着Windows 10 IoT的发布，我们也将可以用上运行Windows的树莓派。<br>自问世以来，受众多计算机发烧友和创客的追捧，曾经一“派”难求。别看其外表“娇小”，内“心”却很强大，视频、音频等功能通通皆有，可谓是“麻雀虽小，五脏俱全”。 [– 来自百度百科]</em></p>
+<p><em>Raspberry Pi(中文名为“树莓派”,简写为RPi，(或者RasPi / RPI) [1]  是为学习计算机编程教育而设计)，只有信用卡大小的微型电脑，其系统基于Linux。随着Windows 10 IoT的发布，我们也将可以用上运行Windows的树莓派。<br>自问世以来，受众多计算机发烧友和创客的追捧，曾经一“派”难求。别看其外表“娇小”，内“心”却很强大，视频、音频等功能通通皆有，可谓是“麻雀虽小，五脏俱全”。 [– 来自百度百科]</em><a id="more"></a></p>
 <hr>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这两天打算买个台式的电脑，但是无奈作为学生党的我没钱（^-^），只能作罢。发愁之际想起大一专业引领课上老师手里的卡片电脑，百度查了下资料。简直完美，这不就我要的吗，LINUX系统、这种编译器又方便折腾，不过这东西我依旧买不起（最新的树莓派3B+ 400大洋），更不说还要那么多的外设要买。想来想去闲鱼买了一个二手的树莓派2B，自己玩的够用了，等以后有钱了一定买个最新的。。。</p>
-<p>今天就先把树莓派的配置过程记录下，踩了两天多的坑，才用上树莓派，真心的不容易啊<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">***</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 系统安装 </span><br><span class="line"></span><br><span class="line">## 系统下载</span><br><span class="line"></span><br><span class="line">[树莓派官网](https://www.raspberrypi.org/downloads/raspbian/)提供很多支持的系统下载，包括windows在内的很多系统。刚开始使用树莓派我打算就使用官方原版系统，原因：</span><br><span class="line"></span><br><span class="line">- 树莓派官原系统是LINUX的发行版，我的博客一直在用ubuntu（LIUNX的一个发行版）更新，上手简单。</span><br><span class="line">- 官方系统坑少，容易很快配置好。</span><br><span class="line">- 官方系统资料多，方便学习。</span><br><span class="line"></span><br><span class="line">## 系统写入</span><br><span class="line"></span><br><span class="line">- SD要格式化，我用的是一个叫[SD Card Formatter]()的软件，放入网盘了，要的时候去找。</span><br><span class="line">- 用镜像写入软件把下载好的系统镜像写入SD卡，软件[Etcher]()也在我的网盘。</span><br><span class="line"></span><br><span class="line">然后把安装系统的SD卡插入树莓派进行连接。</span><br><span class="line"></span><br><span class="line">## 树莓派连接电脑</span><br><span class="line"></span><br><span class="line">我没有显示器，而且买不起。。。只能用我的电脑了，树莓派有三种方式连接电脑：</span><br><span class="line"></span><br><span class="line">### 串口连接</span><br><span class="line"></span><br><span class="line">用USB转串口芯片连接树莓派和电脑，一开始我就是这么打算的。但是比较无奈的是我用CH340和树莓派不兼容，PL232和win 10兼容性太差，一开始是检测不到、试了好多个驱动后终于检测到了，但是。。。我的电脑蓝屏了四五次（为避免系统崩溃），无奈之下放弃了这个方法。留待有缘人去折腾，建议不要用win 10 ，我以前用win 7的时候PL232兼容性贼好。</span><br><span class="line"></span><br><span class="line">### SSH登陆</span><br><span class="line"></span><br><span class="line">设置好树莓派的静态ID，用网线将树莓派和路由器LAN口相连，然后就可以远程操作我们的树莓派了。</span><br><span class="line">但是得注意，我们得和树莓派在同一个wifi频段上。也就是我们电脑得连接树莓派所连接的路由器的wifi，不然连不上。</span><br><span class="line"></span><br><span class="line">### 网线直连</span><br><span class="line"></span><br><span class="line">因为树莓派2B只有一个能用的串口，另外一个串口还是虚拟的，这就很揪心了。你可以通过ssh登录，然后使用其串口。我用树莓派和电脑通过一根网线连接也做到了，网上有很多教程。</span><br><span class="line"></span><br><span class="line">- 用网线连接树莓派的电脑并且把电脑的网络共享给树莓派的网口。</span><br><span class="line">- 在dos界面输入arp -a，会奇怪地多出个192.168.137.1，而且每台电脑都一样，这是本地连接的IP地址，把电脑看成一个路由器，地址为192.168.137.1，然后你树莓派的IP在其频段下设置。这个时候你就可以看到树莓派的IP了，一般后面是以b开头的。</span><br><span class="line">- 然后你打开secureCRT或者PUTTY，通过SSH登录进去，就OK了。</span><br><span class="line"></span><br><span class="line">唉。。。这个地方卡了我整整一天，都想到放弃了（差点就吃土买显示器），最后还是找到办法了。原因是这样的，我在官网下载到的系统然后写入SD卡、开机、SSH连接，然后，emmmmm没有一点点反应，我去</span><br></pre></td></tr></table></figure></p>
-<p>后来吧，我找了大量资料终于发现一个问题，树莓派官方为了支持树莓派3的板载蓝牙功能，关闭了SSH功能。我心里把那个无奈啊，再后来吧，我找了好多的论坛，终于找到了一个2015年的树莓派系统，简直完美啊有木有，果断安装，运行，SSH登陆，成功！！！</p>
+<p>今天就先把树莓派的配置过程记录下，踩了两天多的坑，才用上树莓派，真心的不容易啊</p>
+<hr>
+<h1 id="系统安装"><a href="#系统安装" class="headerlink" title="系统安装"></a>系统安装</h1><h2 id="系统下载"><a href="#系统下载" class="headerlink" title="系统下载"></a>系统下载</h2><p><a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="noopener">树莓派官网</a>提供很多支持的系统下载，包括windows在内的很多系统。刚开始使用树莓派我打算就使用官方原版系统，原因：</p>
+<ul>
+<li>树莓派官原系统是LINUX的发行版，我的博客一直在用ubuntu（LIUNX的一个发行版）更新，上手简单。</li>
+<li>官方系统坑少，容易很快配置好。</li>
+<li>官方系统资料多，方便学习。</li>
+</ul>
+<h2 id="系统写入"><a href="#系统写入" class="headerlink" title="系统写入"></a>系统写入</h2><ul>
+<li>SD要格式化，我用的是一个叫<a href="">SD Card Formatter</a>的软件，放入网盘了，要的时候去找。</li>
+<li>用镜像写入软件把下载好的系统镜像写入SD卡，软件<a href="">Etcher</a>也在我的网盘。</li>
+</ul>
+<p>然后把安装系统的SD卡插入树莓派进行连接。</p>
+<h2 id="树莓派连接电脑"><a href="#树莓派连接电脑" class="headerlink" title="树莓派连接电脑"></a>树莓派连接电脑</h2><p>我没有显示器，而且买不起。。。只能用我的电脑了，树莓派有三种方式连接电脑：</p>
+<h3 id="串口连接"><a href="#串口连接" class="headerlink" title="串口连接"></a>串口连接</h3><p>用USB转串口芯片连接树莓派和电脑，一开始我就是这么打算的。但是比较无奈的是我用CH340和树莓派不兼容，PL232和win 10兼容性太差，一开始是检测不到、试了好多个驱动后终于检测到了，但是。。。我的电脑蓝屏了四五次（为避免系统崩溃），无奈之下放弃了这个方法。留待有缘人去折腾，建议不要用win 10 ，我以前用win 7的时候PL232兼容性贼好。</p>
+<h3 id="SSH登陆"><a href="#SSH登陆" class="headerlink" title="SSH登陆"></a>SSH登陆</h3><p>设置好树莓派的静态ID，用网线将树莓派和路由器LAN口相连，然后就可以远程操作我们的树莓派了。<br>但是得注意，我们得和树莓派在同一个wifi频段上。也就是我们电脑得连接树莓派所连接的路由器的wifi，不然连不上。</p>
+<h3 id="网线直连"><a href="#网线直连" class="headerlink" title="网线直连"></a>网线直连</h3><p>因为树莓派2B只有一个能用的串口，另外一个串口还是虚拟的，这就很揪心了。你可以通过ssh登录，然后使用其串口。我用树莓派和电脑通过一根网线连接也做到了，网上有很多教程。</p>
+<ul>
+<li>用网线连接树莓派的电脑并且把电脑的网络共享给树莓派的网口。</li>
+<li>在dos界面输入arp -a，会奇怪地多出个192.168.137.1，而且每台电脑都一样，这是本地连接的IP地址，把电脑看成一个路由器，地址为192.168.137.1，然后你树莓派的IP在其频段下设置。这个时候你就可以看到树莓派的IP了，一般后面是以b开头的。</li>
+<li>然后你打开secureCRT或者PUTTY，通过SSH登录进去，就OK了。</li>
+</ul>
+<p>唉。。。这个地方卡了我整整一天，都想到放弃了（差点就吃土买显示器），最后还是找到办法了。原因是这样的，我在官网下载到的系统然后写入SD卡、开机、SSH连接，然后，emmmmm没有一点点反应，我去~~~<br>后来吧，我找了大量资料终于发现一个问题，树莓派官方为了支持树莓派3的板载蓝牙功能，关闭了SSH功能。我心里把那个无奈啊，再后来吧，我找了好多的论坛，终于找到了一个2015年的树莓派系统，简直完美啊有木有，果断安装，运行，SSH登陆，成功！！！</p>
 <p>最后，我又一次充满了斗气，折腾的路上永不止息！</p>
 
       
@@ -525,8 +546,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/12/5个简历模板下载及制作网站/" rel="next" title="5个简历模板下载及制作网站">
-                <i class="fa fa-chevron-left"></i> 5个简历模板下载及制作网站
+              <a href="/2018/10/12/SHELL脚本编程_1/" rel="next" title="SHELL脚本编程_1">
+                <i class="fa fa-chevron-left"></i> SHELL脚本编程_1
               </a>
             
           </div>
@@ -698,7 +719,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统安装"><span class="nav-number">2.</span> <span class="nav-text">系统安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统下载"><span class="nav-number">2.1.</span> <span class="nav-text">系统下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统写入"><span class="nav-number">2.2.</span> <span class="nav-text">系统写入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树莓派连接电脑"><span class="nav-number">2.3.</span> <span class="nav-text">树莓派连接电脑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#串口连接"><span class="nav-number">2.3.1.</span> <span class="nav-text">串口连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH登陆"><span class="nav-number">2.3.2.</span> <span class="nav-text">SSH登陆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网线直连"><span class="nav-number">2.3.3.</span> <span class="nav-text">网线直连</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
