@@ -99,11 +99,11 @@
   </entry>
   
   <entry>
-    <title>傻瓜函数式编程</title>
-    <link href="https://seule.cn/2018/10/12/%E5%82%BB%E7%93%9C%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    <id>https://seule.cn/2018/10/12/傻瓜函数式编程/</id>
+    <title>Functional Programming For The Rest of Us</title>
+    <link href="https://seule.cn/2018/10/12/Functional%20Programming%20For%20The%20Rest%20of%20Us/"/>
+    <id>https://seule.cn/2018/10/12/Functional Programming For The Rest of Us/</id>
     <published>2018-10-12T13:35:16.149Z</published>
-    <updated>2018-09-25T13:50:41.000Z</updated>
+    <updated>2018-09-25T13:52:39.000Z</updated>
     
     <summary type="html">
     
@@ -116,7 +116,9 @@
     
       <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="函数式编程" scheme="https://seule.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+      <category term="Functional" scheme="https://seule.cn/tags/Functional/"/>
+    
+      <category term="Programming" scheme="https://seule.cn/tags/Programming/"/>
     
       <category term="原文" scheme="https://seule.cn/tags/%E5%8E%9F%E6%96%87/"/>
     
@@ -231,32 +233,6 @@
   </entry>
   
   <entry>
-    <title>11个免费高清图片下载站</title>
-    <link href="https://seule.cn/2018/10/12/11%E4%B8%AA%E5%85%8D%E8%B4%B9%E9%AB%98%E6%B8%85%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD%E7%AB%99/"/>
-    <id>https://seule.cn/2018/10/12/11个免费高清图片下载站/</id>
-    <published>2018-10-12T13:35:16.149Z</published>
-    <updated>2018-09-16T13:22:22.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;当你需要制作PPT、海报或者微信公众号图文，以及其他平面设计的时候，通常可能需要一些高清又好看的图片。然而除了百度，你还有其他找图的方式吗？视频中，我们提供了五大常用图片资源下载网站，下文，我列出了十一个清单。
-    
-    </summary>
-    
-      <category term="高效率生活" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
-    
-      <category term="技巧" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/%E6%8A%80%E5%B7%A7/"/>
-    
-    
-      <category term="高清" scheme="https://seule.cn/tags/%E9%AB%98%E6%B8%85/"/>
-    
-      <category term="图片" scheme="https://seule.cn/tags/%E5%9B%BE%E7%89%87/"/>
-    
-      <category term="下载" scheme="https://seule.cn/tags/%E4%B8%8B%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
     <title>SHELL脚本编程_2</title>
     <link href="https://seule.cn/2018/10/12/SHELL%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B_2/"/>
     <id>https://seule.cn/2018/10/12/SHELL脚本编程_2/</id>
@@ -313,11 +289,37 @@
   </entry>
   
   <entry>
-    <title>Functional Programming For The Rest of Us</title>
-    <link href="https://seule.cn/2018/10/12/Functional%20Programming%20For%20The%20Rest%20of%20Us/"/>
-    <id>https://seule.cn/2018/10/12/Functional Programming For The Rest of Us/</id>
+    <title>11个免费高清图片下载站</title>
+    <link href="https://seule.cn/2018/10/12/11%E4%B8%AA%E5%85%8D%E8%B4%B9%E9%AB%98%E6%B8%85%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD%E7%AB%99/"/>
+    <id>https://seule.cn/2018/10/12/11个免费高清图片下载站/</id>
     <published>2018-10-12T13:35:16.149Z</published>
-    <updated>2018-09-25T13:52:39.000Z</updated>
+    <updated>2018-09-16T13:22:22.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当你需要制作PPT、海报或者微信公众号图文，以及其他平面设计的时候，通常可能需要一些高清又好看的图片。然而除了百度，你还有其他找图的方式吗？视频中，我们提供了五大常用图片资源下载网站，下文，我列出了十一个清单。
+    
+    </summary>
+    
+      <category term="高效率生活" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="技巧" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="高清" scheme="https://seule.cn/tags/%E9%AB%98%E6%B8%85/"/>
+    
+      <category term="图片" scheme="https://seule.cn/tags/%E5%9B%BE%E7%89%87/"/>
+    
+      <category term="下载" scheme="https://seule.cn/tags/%E4%B8%8B%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>傻瓜函数式编程</title>
+    <link href="https://seule.cn/2018/10/12/%E5%82%BB%E7%93%9C%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    <id>https://seule.cn/2018/10/12/傻瓜函数式编程/</id>
+    <published>2018-10-12T13:35:16.149Z</published>
+    <updated>2018-09-25T13:50:41.000Z</updated>
     
     <summary type="html">
     
@@ -332,9 +334,7 @@
     
       <category term="原文" scheme="https://seule.cn/tags/%E5%8E%9F%E6%96%87/"/>
     
-      <category term="Functional" scheme="https://seule.cn/tags/Functional/"/>
-    
-      <category term="Programming" scheme="https://seule.cn/tags/Programming/"/>
+      <category term="函数式编程" scheme="https://seule.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
