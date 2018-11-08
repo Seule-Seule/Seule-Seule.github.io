@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seule.cn/"/>
-  <updated>2018-11-02T02:12:03.535Z</updated>
+  <updated>2018-11-08T04:10:21.939Z</updated>
   <id>https://seule.cn/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>README</title>
+    <link href="https://seule.cn/2018/11/08/README/"/>
+    <id>https://seule.cn/2018/11/08/README/</id>
+    <published>2018-11-08T04:10:21.943Z</published>
+    <updated>2018-11-08T04:10:21.939Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;README&quot;&gt;&lt;a href=&quot;#README&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Git" scheme="https://seule.cn/categories/Git/"/>
+    
+      <category term="Github" scheme="https://seule.cn/categories/Git/Github/"/>
+    
+      <category term="学习" scheme="https://seule.cn/categories/Git/Github/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Giehub学习" scheme="https://seule.cn/tags/Giehub%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="README" scheme="https://seule.cn/tags/README/"/>
+    
+  </entry>
   
   <entry>
     <title>树梅派的配置文件config.txt</title>
@@ -70,6 +102,56 @@
   </entry>
   
   <entry>
+    <title>Github了解--Git指令</title>
+    <link href="https://seule.cn/2018/10/12/Github%E4%BA%86%E8%A7%A3--Git%E6%8C%87%E4%BB%A4/"/>
+    <id>https://seule.cn/2018/10/12/Github了解--Git指令/</id>
+    <published>2018-10-12T13:35:16.149Z</published>
+    <updated>2018-09-16T13:05:32.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;Git 仓库管理功能是 GitHub 的核心。因此,使用 GitHub 之前必须先掌握 Git 的相关知识,同时本地的设备还要安装 Git 的环境。这篇文章就写写安装使用 Git 所需的知识及各种设置。
+    
+    </summary>
+    
+      <category term="Git" scheme="https://seule.cn/categories/Git/"/>
+    
+      <category term="Github" scheme="https://seule.cn/categories/Git/Github/"/>
+    
+      <category term="学习" scheme="https://seule.cn/categories/Git/Github/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Giehub学习" scheme="https://seule.cn/tags/Giehub%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Git指令" scheme="https://seule.cn/tags/Git%E6%8C%87%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>傻瓜函数式编程</title>
+    <link href="https://seule.cn/2018/10/12/%E5%82%BB%E7%93%9C%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    <id>https://seule.cn/2018/10/12/傻瓜函数式编程/</id>
+    <published>2018-10-12T13:35:16.149Z</published>
+    <updated>2018-09-25T13:50:41.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;本文及翻译摘自Github-justjavac（迷渡）&quot;&gt;&lt;a href=&quot;#本文及翻译摘自Github-justjavac（迷渡）&quot; class=&quot;headerlink&quot; title=&quot;本文及翻译摘自Github@justjavac（迷渡） &quot;&gt;&lt;/a&gt;本文及翻译摘自Github&lt;a href=&quot;https://github.com/justjavac/free-programming-books-zh_CN&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@justjavac（迷渡）&lt;/a&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="https://seule.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="原文" scheme="https://seule.cn/tags/%E5%8E%9F%E6%96%87/"/>
+    
+      <category term="函数式编程" scheme="https://seule.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SHELL 提示符学习汇总_2</title>
     <link href="https://seule.cn/2018/10/12/SHELL%20%E6%8F%90%E7%A4%BA%E7%AC%A6%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB_2/"/>
     <id>https://seule.cn/2018/10/12/SHELL 提示符学习汇总_2/</id>
@@ -94,30 +176,6 @@
       <category term="shell" scheme="https://seule.cn/tags/shell/"/>
     
       <category term="提示符" scheme="https://seule.cn/tags/%E6%8F%90%E7%A4%BA%E7%AC%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>傻瓜函数式编程</title>
-    <link href="https://seule.cn/2018/10/12/%E5%82%BB%E7%93%9C%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    <id>https://seule.cn/2018/10/12/傻瓜函数式编程/</id>
-    <published>2018-10-12T13:35:16.149Z</published>
-    <updated>2018-09-25T13:50:41.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;本文及翻译摘自Github-justjavac（迷渡）&quot;&gt;&lt;a href=&quot;#本文及翻译摘自Github-justjavac（迷渡）&quot; class=&quot;headerlink&quot; title=&quot;本文及翻译摘自Github@justjavac（迷渡） &quot;&gt;&lt;/a&gt;本文及翻译摘自Github&lt;a href=&quot;https://github.com/justjavac/free-programming-books-zh_CN&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@justjavac（迷渡）&lt;/a&gt;
-    
-    </summary>
-    
-      <category term="学习" scheme="https://seule.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="函数式编程" scheme="https://seule.cn/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="原文" scheme="https://seule.cn/tags/%E5%8E%9F%E6%96%87/"/>
     
   </entry>
   
@@ -150,32 +208,6 @@
   </entry>
   
   <entry>
-    <title>Github了解--Git指令</title>
-    <link href="https://seule.cn/2018/10/12/Github%E4%BA%86%E8%A7%A3--Git%E6%8C%87%E4%BB%A4/"/>
-    <id>https://seule.cn/2018/10/12/Github了解--Git指令/</id>
-    <published>2018-10-12T13:35:16.149Z</published>
-    <updated>2018-09-16T13:05:32.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;Git 仓库管理功能是 GitHub 的核心。因此,使用 GitHub 之前必须先掌握 Git 的相关知识,同时本地的设备还要安装 Git 的环境。这篇文章就写写安装使用 Git 所需的知识及各种设置。
-    
-    </summary>
-    
-      <category term="Git" scheme="https://seule.cn/categories/Git/"/>
-    
-      <category term="Github" scheme="https://seule.cn/categories/Git/Github/"/>
-    
-      <category term="学习" scheme="https://seule.cn/categories/Git/Github/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="Giehub学习" scheme="https://seule.cn/tags/Giehub%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="Git指令" scheme="https://seule.cn/tags/Git%E6%8C%87%E4%BB%A4/"/>
-    
-  </entry>
-  
-  <entry>
     <title>SHELL脚本编程_1</title>
     <link href="https://seule.cn/2018/10/12/SHELL%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B_1/"/>
     <id>https://seule.cn/2018/10/12/SHELL脚本编程_1/</id>
@@ -204,32 +236,6 @@
   </entry>
   
   <entry>
-    <title>11个免费高清图片下载站</title>
-    <link href="https://seule.cn/2018/10/12/11%E4%B8%AA%E5%85%8D%E8%B4%B9%E9%AB%98%E6%B8%85%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD%E7%AB%99/"/>
-    <id>https://seule.cn/2018/10/12/11个免费高清图片下载站/</id>
-    <published>2018-10-12T13:35:16.149Z</published>
-    <updated>2018-09-16T13:22:22.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;当你需要制作PPT、海报或者微信公众号图文，以及其他平面设计的时候，通常可能需要一些高清又好看的图片。然而除了百度，你还有其他找图的方式吗？视频中，我们提供了五大常用图片资源下载网站，下文，我列出了十一个清单。
-    
-    </summary>
-    
-      <category term="高效率生活" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
-    
-      <category term="技巧" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/%E6%8A%80%E5%B7%A7/"/>
-    
-    
-      <category term="高清" scheme="https://seule.cn/tags/%E9%AB%98%E6%B8%85/"/>
-    
-      <category term="图片" scheme="https://seule.cn/tags/%E5%9B%BE%E7%89%87/"/>
-    
-      <category term="下载" scheme="https://seule.cn/tags/%E4%B8%8B%E8%BD%BD/"/>
-    
-  </entry>
-  
-  <entry>
     <title>5个简历模板下载及制作网站</title>
     <link href="https://seule.cn/2018/10/12/5%E4%B8%AA%E7%AE%80%E5%8E%86%E6%A8%A1%E6%9D%BF%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%88%B6%E4%BD%9C%E7%BD%91%E7%AB%99/"/>
     <id>https://seule.cn/2018/10/12/5个简历模板下载及制作网站/</id>
@@ -253,34 +259,6 @@
       <category term="模板" scheme="https://seule.cn/tags/%E6%A8%A1%E6%9D%BF/"/>
     
       <category term="职场" scheme="https://seule.cn/tags/%E8%81%8C%E5%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SHELL脚本编程_2</title>
-    <link href="https://seule.cn/2018/10/12/SHELL%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B_2/"/>
-    <id>https://seule.cn/2018/10/12/SHELL脚本编程_2/</id>
-    <published>2018-10-12T13:35:16.149Z</published>
-    <updated>2018-09-19T15:42:19.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;给出的那些shell脚本里, shell按照命令在脚本中出现的顺序依次进行处理。对顺序操作来说,这已经足够了,因为在这种操作环境下,你想要的就是所有的命令按照正确的顺序执行。然而,并非所有程序都如此操作。许多程序要求对shell脚本中的命令施加一些逻辑流程控制。有一类命令会根据条件使脚本跳过某些命令。这样的命令通常称为结构化命令(structured command)。
-    
-    </summary>
-    
-      <category term="SHELL" scheme="https://seule.cn/categories/SHELL/"/>
-    
-      <category term="学习" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="编程" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="SHELL" scheme="https://seule.cn/tags/SHELL/"/>
-    
-      <category term="编程" scheme="https://seule.cn/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -313,6 +291,86 @@
   </entry>
   
   <entry>
+    <title>SHELL脚本编程_2</title>
+    <link href="https://seule.cn/2018/10/12/SHELL%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B_2/"/>
+    <id>https://seule.cn/2018/10/12/SHELL脚本编程_2/</id>
+    <published>2018-10-12T13:35:16.149Z</published>
+    <updated>2018-09-19T15:42:19.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;给出的那些shell脚本里, shell按照命令在脚本中出现的顺序依次进行处理。对顺序操作来说,这已经足够了,因为在这种操作环境下,你想要的就是所有的命令按照正确的顺序执行。然而,并非所有程序都如此操作。许多程序要求对shell脚本中的命令施加一些逻辑流程控制。有一类命令会根据条件使脚本跳过某些命令。这样的命令通常称为结构化命令(structured command)。
+    
+    </summary>
+    
+      <category term="SHELL" scheme="https://seule.cn/categories/SHELL/"/>
+    
+      <category term="学习" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="编程" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="SHELL" scheme="https://seule.cn/tags/SHELL/"/>
+    
+      <category term="编程" scheme="https://seule.cn/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11个免费高清图片下载站</title>
+    <link href="https://seule.cn/2018/10/12/11%E4%B8%AA%E5%85%8D%E8%B4%B9%E9%AB%98%E6%B8%85%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD%E7%AB%99/"/>
+    <id>https://seule.cn/2018/10/12/11个免费高清图片下载站/</id>
+    <published>2018-10-12T13:35:16.149Z</published>
+    <updated>2018-09-16T13:22:22.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当你需要制作PPT、海报或者微信公众号图文，以及其他平面设计的时候，通常可能需要一些高清又好看的图片。然而除了百度，你还有其他找图的方式吗？视频中，我们提供了五大常用图片资源下载网站，下文，我列出了十一个清单。
+    
+    </summary>
+    
+      <category term="高效率生活" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="技巧" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="高清" scheme="https://seule.cn/tags/%E9%AB%98%E6%B8%85/"/>
+    
+      <category term="图片" scheme="https://seule.cn/tags/%E5%9B%BE%E7%89%87/"/>
+    
+      <category term="下载" scheme="https://seule.cn/tags/%E4%B8%8B%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Functional Programming For The Rest of Us</title>
+    <link href="https://seule.cn/2018/10/12/Functional%20Programming%20For%20The%20Rest%20of%20Us/"/>
+    <id>https://seule.cn/2018/10/12/Functional Programming For The Rest of Us/</id>
+    <published>2018-10-12T13:35:16.149Z</published>
+    <updated>2018-09-25T13:52:39.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;本文及翻译摘自Github-justjavac（迷渡）&quot;&gt;&lt;a href=&quot;#本文及翻译摘自Github-justjavac（迷渡）&quot; class=&quot;headerlink&quot; title=&quot;本文及翻译摘自Github@justjavac（迷渡） &quot;&gt;&lt;/a&gt;本文及翻译摘自Github&lt;a href=&quot;https://github.com/justjavac/free-programming-books-zh_CN&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@justjavac（迷渡）&lt;/a&gt;
+    
+    </summary>
+    
+      <category term="学习" scheme="https://seule.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Functional" scheme="https://seule.cn/tags/Functional/"/>
+    
+      <category term="Programming" scheme="https://seule.cn/tags/Programming/"/>
+    
+      <category term="原文" scheme="https://seule.cn/tags/%E5%8E%9F%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
     <title>5个学术文献资料推荐网站</title>
     <link href="https://seule.cn/2018/10/12/5%E4%B8%AA%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE%E8%B5%84%E6%96%99%E6%8E%A8%E8%8D%90%E7%BD%91%E7%AB%99/"/>
     <id>https://seule.cn/2018/10/12/5个学术文献资料推荐网站/</id>
@@ -335,60 +393,6 @@
       <category term="资料" scheme="https://seule.cn/tags/%E8%B5%84%E6%96%99/"/>
     
       <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Functional Programming For The Rest of Us</title>
-    <link href="https://seule.cn/2018/10/12/Functional%20Programming%20For%20The%20Rest%20of%20Us/"/>
-    <id>https://seule.cn/2018/10/12/Functional Programming For The Rest of Us/</id>
-    <published>2018-10-12T13:35:16.149Z</published>
-    <updated>2018-09-25T13:52:39.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;本文及翻译摘自Github-justjavac（迷渡）&quot;&gt;&lt;a href=&quot;#本文及翻译摘自Github-justjavac（迷渡）&quot; class=&quot;headerlink&quot; title=&quot;本文及翻译摘自Github@justjavac（迷渡） &quot;&gt;&lt;/a&gt;本文及翻译摘自Github&lt;a href=&quot;https://github.com/justjavac/free-programming-books-zh_CN&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@justjavac（迷渡）&lt;/a&gt;
-    
-    </summary>
-    
-      <category term="学习" scheme="https://seule.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="原文" scheme="https://seule.cn/tags/%E5%8E%9F%E6%96%87/"/>
-    
-      <category term="Functional" scheme="https://seule.cn/tags/Functional/"/>
-    
-      <category term="Programming" scheme="https://seule.cn/tags/Programming/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我是怎么找到电子书的</title>
-    <link href="https://seule.cn/2018/10/12/%E6%88%91%E6%98%AF%E6%80%8E%E4%B9%88%E6%89%BE%E5%88%B0%E7%94%B5%E5%AD%90%E4%B9%A6%E7%9A%84/"/>
-    <id>https://seule.cn/2018/10/12/我是怎么找到电子书的/</id>
-    <published>2018-10-12T13:35:16.145Z</published>
-    <updated>2018-09-16T13:24:32.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;不论是娱乐用的、还是专业数据，我都能找得着，就是因为这些网站啦！
-    
-    </summary>
-    
-      <category term="高效率生活" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
-    
-      <category term="技巧" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/%E6%8A%80%E5%B7%A7/"/>
-    
-    
-      <category term="电子书" scheme="https://seule.cn/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
-    
-      <category term="经验" scheme="https://seule.cn/tags/%E7%BB%8F%E9%AA%8C/"/>
-    
-      <category term="搜索" scheme="https://seule.cn/tags/%E6%90%9C%E7%B4%A2/"/>
-    
-      <category term="Seule" scheme="https://seule.cn/tags/Seule/"/>
     
   </entry>
   
@@ -417,6 +421,34 @@
       <category term="技巧" scheme="https://seule.cn/tags/%E6%8A%80%E5%B7%A7/"/>
     
       <category term="美化" scheme="https://seule.cn/tags/%E7%BE%8E%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我是怎么找到电子书的</title>
+    <link href="https://seule.cn/2018/10/12/%E6%88%91%E6%98%AF%E6%80%8E%E4%B9%88%E6%89%BE%E5%88%B0%E7%94%B5%E5%AD%90%E4%B9%A6%E7%9A%84/"/>
+    <id>https://seule.cn/2018/10/12/我是怎么找到电子书的/</id>
+    <published>2018-10-12T13:35:16.145Z</published>
+    <updated>2018-09-16T13:24:32.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;不论是娱乐用的、还是专业数据，我都能找得着，就是因为这些网站啦！
+    
+    </summary>
+    
+      <category term="高效率生活" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="技巧" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="电子书" scheme="https://seule.cn/tags/%E7%94%B5%E5%AD%90%E4%B9%A6/"/>
+    
+      <category term="经验" scheme="https://seule.cn/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+      <category term="搜索" scheme="https://seule.cn/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+      <category term="Seule" scheme="https://seule.cn/tags/Seule/"/>
     
   </entry>
   
