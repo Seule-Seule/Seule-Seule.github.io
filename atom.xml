@@ -117,9 +117,9 @@
     
       <category term="SHELL" scheme="https://seule.cn/tags/SHELL/"/>
     
-      <category term="脚本" scheme="https://seule.cn/tags/%E8%84%9A%E6%9C%AC/"/>
-    
       <category term="编程" scheme="https://seule.cn/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="脚本" scheme="https://seule.cn/tags/%E8%84%9A%E6%9C%AC/"/>
     
   </entry>
   
@@ -146,62 +146,6 @@
       <category term="Giehub学习" scheme="https://seule.cn/tags/Giehub%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="Git指令" scheme="https://seule.cn/tags/Git%E6%8C%87%E4%BB%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SHELL 提示符学习汇总_2</title>
-    <link href="https://seule.cn/2018/10/12/SHELL%20%E6%8F%90%E7%A4%BA%E7%AC%A6%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB_2/"/>
-    <id>https://seule.cn/2018/10/12/SHELL 提示符学习汇总_2/</id>
-    <published>2018-10-12T13:35:16.149Z</published>
-    <updated>2018-09-16T13:22:47.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;上一篇更新到重定向命令，后来感觉也没怎么用到那些命令。不过既然是技术博客、为了防止忘记，我还是会把一些不一定会用到的命令记录下来，以备以后查阅！
-    
-    </summary>
-    
-      <category term="SHELL" scheme="https://seule.cn/categories/SHELL/"/>
-    
-      <category term="学习" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="命令行" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-    
-      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="shell" scheme="https://seule.cn/tags/shell/"/>
-    
-      <category term="提示符" scheme="https://seule.cn/tags/%E6%8F%90%E7%A4%BA%E7%AC%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SHELL 提示符学习汇总</title>
-    <link href="https://seule.cn/2018/10/12/SHELL%E6%8F%90%E7%A4%BA%E7%AC%A6%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB_%EF%BC%91/"/>
-    <id>https://seule.cn/2018/10/12/SHELL提示符学习汇总_１/</id>
-    <published>2018-10-12T13:35:16.149Z</published>
-    <updated>2018-09-16T13:23:35.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;学习Linux，怎么能不会命令行呢？本文是对Linux命令行的学习过程记录。
-    
-    </summary>
-    
-      <category term="SHELL" scheme="https://seule.cn/categories/SHELL/"/>
-    
-      <category term="学习" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="命令行" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-    
-      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="shell" scheme="https://seule.cn/tags/shell/"/>
-    
-      <category term="提示符" scheme="https://seule.cn/tags/%E6%8F%90%E7%A4%BA%E7%AC%A6/"/>
     
   </entry>
   
@@ -233,28 +177,28 @@
   </entry>
   
   <entry>
-    <title>11个免费高清图片下载站</title>
-    <link href="https://seule.cn/2018/10/12/11%E4%B8%AA%E5%85%8D%E8%B4%B9%E9%AB%98%E6%B8%85%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD%E7%AB%99/"/>
-    <id>https://seule.cn/2018/10/12/11个免费高清图片下载站/</id>
+    <title>Functional Programming For The Rest of Us</title>
+    <link href="https://seule.cn/2018/10/12/Functional%20Programming%20For%20The%20Rest%20of%20Us/"/>
+    <id>https://seule.cn/2018/10/12/Functional Programming For The Rest of Us/</id>
     <published>2018-10-12T13:35:16.149Z</published>
-    <updated>2018-09-16T13:22:22.000Z</updated>
+    <updated>2018-09-25T13:52:39.000Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;当你需要制作PPT、海报或者微信公众号图文，以及其他平面设计的时候，通常可能需要一些高清又好看的图片。然而除了百度，你还有其他找图的方式吗？视频中，我们提供了五大常用图片资源下载网站，下文，我列出了十一个清单。
+      &lt;h2 id=&quot;本文及翻译摘自Github-justjavac（迷渡）&quot;&gt;&lt;a href=&quot;#本文及翻译摘自Github-justjavac（迷渡）&quot; class=&quot;headerlink&quot; title=&quot;本文及翻译摘自Github@justjavac（迷渡） &quot;&gt;&lt;/a&gt;本文及翻译摘自Github&lt;a href=&quot;https://github.com/justjavac/free-programming-books-zh_CN&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@justjavac（迷渡）&lt;/a&gt;
     
     </summary>
     
-      <category term="高效率生活" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
-    
-      <category term="技巧" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/%E6%8A%80%E5%B7%A7/"/>
+      <category term="学习" scheme="https://seule.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="高清" scheme="https://seule.cn/tags/%E9%AB%98%E6%B8%85/"/>
+      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="图片" scheme="https://seule.cn/tags/%E5%9B%BE%E7%89%87/"/>
+      <category term="Functional" scheme="https://seule.cn/tags/Functional/"/>
     
-      <category term="下载" scheme="https://seule.cn/tags/%E4%B8%8B%E8%BD%BD/"/>
+      <category term="Programming" scheme="https://seule.cn/tags/Programming/"/>
+    
+      <category term="原文" scheme="https://seule.cn/tags/%E5%8E%9F%E6%96%87/"/>
     
   </entry>
   
@@ -313,6 +257,34 @@
   </entry>
   
   <entry>
+    <title>SHELL 提示符学习汇总_2</title>
+    <link href="https://seule.cn/2018/10/12/SHELL%20%E6%8F%90%E7%A4%BA%E7%AC%A6%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB_2/"/>
+    <id>https://seule.cn/2018/10/12/SHELL 提示符学习汇总_2/</id>
+    <published>2018-10-12T13:35:16.149Z</published>
+    <updated>2018-09-16T13:22:47.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上一篇更新到重定向命令，后来感觉也没怎么用到那些命令。不过既然是技术博客、为了防止忘记，我还是会把一些不一定会用到的命令记录下来，以备以后查阅！
+    
+    </summary>
+    
+      <category term="SHELL" scheme="https://seule.cn/categories/SHELL/"/>
+    
+      <category term="学习" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="命令行" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+    
+      <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="shell" scheme="https://seule.cn/tags/shell/"/>
+    
+      <category term="提示符" scheme="https://seule.cn/tags/%E6%8F%90%E7%A4%BA%E7%AC%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据的动态储存空间分配</title>
     <link href="https://seule.cn/2018/10/12/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8A%A8%E6%80%81%E5%82%A8%E5%AD%98%E7%A9%BA%E9%97%B4%E5%88%86%E9%85%8D/"/>
     <id>https://seule.cn/2018/10/12/数据的动态储存空间分配/</id>
@@ -341,28 +313,56 @@
   </entry>
   
   <entry>
-    <title>Functional Programming For The Rest of Us</title>
-    <link href="https://seule.cn/2018/10/12/Functional%20Programming%20For%20The%20Rest%20of%20Us/"/>
-    <id>https://seule.cn/2018/10/12/Functional Programming For The Rest of Us/</id>
+    <title>SHELL 提示符学习汇总</title>
+    <link href="https://seule.cn/2018/10/12/SHELL%E6%8F%90%E7%A4%BA%E7%AC%A6%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB_%EF%BC%91/"/>
+    <id>https://seule.cn/2018/10/12/SHELL提示符学习汇总_１/</id>
     <published>2018-10-12T13:35:16.149Z</published>
-    <updated>2018-09-25T13:52:39.000Z</updated>
+    <updated>2018-09-16T13:23:35.000Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;本文及翻译摘自Github-justjavac（迷渡）&quot;&gt;&lt;a href=&quot;#本文及翻译摘自Github-justjavac（迷渡）&quot; class=&quot;headerlink&quot; title=&quot;本文及翻译摘自Github@justjavac（迷渡） &quot;&gt;&lt;/a&gt;本文及翻译摘自Github&lt;a href=&quot;https://github.com/justjavac/free-programming-books-zh_CN&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@justjavac（迷渡）&lt;/a&gt;
+      &lt;p&gt;学习Linux，怎么能不会命令行呢？本文是对Linux命令行的学习过程记录。
     
     </summary>
     
-      <category term="学习" scheme="https://seule.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="SHELL" scheme="https://seule.cn/categories/SHELL/"/>
+    
+      <category term="学习" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="命令行" scheme="https://seule.cn/categories/SHELL/%E5%AD%A6%E4%B9%A0/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
     
       <category term="学习" scheme="https://seule.cn/tags/%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="Functional" scheme="https://seule.cn/tags/Functional/"/>
+      <category term="shell" scheme="https://seule.cn/tags/shell/"/>
     
-      <category term="Programming" scheme="https://seule.cn/tags/Programming/"/>
+      <category term="提示符" scheme="https://seule.cn/tags/%E6%8F%90%E7%A4%BA%E7%AC%A6/"/>
     
-      <category term="原文" scheme="https://seule.cn/tags/%E5%8E%9F%E6%96%87/"/>
+  </entry>
+  
+  <entry>
+    <title>11个免费高清图片下载站</title>
+    <link href="https://seule.cn/2018/10/12/11%E4%B8%AA%E5%85%8D%E8%B4%B9%E9%AB%98%E6%B8%85%E5%9B%BE%E7%89%87%E4%B8%8B%E8%BD%BD%E7%AB%99/"/>
+    <id>https://seule.cn/2018/10/12/11个免费高清图片下载站/</id>
+    <published>2018-10-12T13:35:16.149Z</published>
+    <updated>2018-09-16T13:22:22.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当你需要制作PPT、海报或者微信公众号图文，以及其他平面设计的时候，通常可能需要一些高清又好看的图片。然而除了百度，你还有其他找图的方式吗？视频中，我们提供了五大常用图片资源下载网站，下文，我列出了十一个清单。
+    
+    </summary>
+    
+      <category term="高效率生活" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="技巧" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="高清" scheme="https://seule.cn/tags/%E9%AB%98%E6%B8%85/"/>
+    
+      <category term="图片" scheme="https://seule.cn/tags/%E5%9B%BE%E7%89%87/"/>
+    
+      <category term="下载" scheme="https://seule.cn/tags/%E4%B8%8B%E8%BD%BD/"/>
     
   </entry>
   
