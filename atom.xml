@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seule.cn/"/>
-  <updated>2018-11-25T03:28:58.201Z</updated>
+  <updated>2018-11-28T02:26:10.017Z</updated>
   <id>https://seule.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>apt-get 软件安装那些事儿</title>
+    <link href="https://seule.cn/2018/11/28/apt-get%20%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/"/>
+    <id>https://seule.cn/2018/11/28/apt-get 软件安装那些事儿/</id>
+    <published>2018-11-28T02:27:30.185Z</published>
+    <updated>2018-11-28T02:26:10.017Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;对于初次接触Linux的我来说，要想在Ubuntu系统上熟练地安装、升级、卸载软件，确实是挺考验人的一件事，会遇到各种各样的问题，有时候会把我搞得很不耐烦，打击我的学习积极性。Ubuntu一般使用apt-get命令 (ubuntu16.04版本以后可以使用：apt) 来安装、升级、卸载软件。
+    
+    </summary>
+    
+      <category term="Ubuntu" scheme="https://seule.cn/categories/Ubuntu/"/>
+    
+      <category term="apt-get" scheme="https://seule.cn/categories/Ubuntu/apt-get/"/>
+    
+      <category term="软件安装" scheme="https://seule.cn/categories/Ubuntu/apt-get/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+    
+      <category term="Ubuntu" scheme="https://seule.cn/tags/Ubuntu/"/>
+    
+      <category term="apt-get" scheme="https://seule.cn/tags/apt-get/"/>
+    
+      <category term="软件安装" scheme="https://seule.cn/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
   
   <entry>
     <title>python脚本的模块记录</title>
@@ -222,9 +250,9 @@
     
       <category term="SHELL" scheme="https://seule.cn/tags/SHELL/"/>
     
-      <category term="脚本" scheme="https://seule.cn/tags/%E8%84%9A%E6%9C%AC/"/>
-    
       <category term="编程" scheme="https://seule.cn/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="脚本" scheme="https://seule.cn/tags/%E8%84%9A%E6%9C%AC/"/>
     
   </entry>
   
@@ -328,11 +356,11 @@
       <category term="技巧" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/%E6%8A%80%E5%B7%A7/"/>
     
     
+      <category term="模板" scheme="https://seule.cn/tags/%E6%A8%A1%E6%9D%BF/"/>
+    
       <category term="PPT" scheme="https://seule.cn/tags/PPT/"/>
     
       <category term="技巧" scheme="https://seule.cn/tags/%E6%8A%80%E5%B7%A7/"/>
-    
-      <category term="模板" scheme="https://seule.cn/tags/%E6%A8%A1%E6%9D%BF/"/>
     
       <category term="美化" scheme="https://seule.cn/tags/%E7%BE%8E%E5%8C%96/"/>
     
@@ -409,9 +437,9 @@
       <category term="技巧" scheme="https://seule.cn/categories/%E9%AB%98%E6%95%88%E7%8E%87%E7%94%9F%E6%B4%BB/%E6%8A%80%E5%B7%A7/"/>
     
     
-      <category term="模板" scheme="https://seule.cn/tags/%E6%A8%A1%E6%9D%BF/"/>
-    
       <category term="简历" scheme="https://seule.cn/tags/%E7%AE%80%E5%8E%86/"/>
+    
+      <category term="模板" scheme="https://seule.cn/tags/%E6%A8%A1%E6%9D%BF/"/>
     
       <category term="职场" scheme="https://seule.cn/tags/%E8%81%8C%E5%9C%BA/"/>
     
