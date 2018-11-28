@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://seule.cn/"/>
-  <updated>2018-11-28T02:26:10.017Z</updated>
+  <updated>2018-11-28T11:52:09.549Z</updated>
   <id>https://seule.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>windows 10 的Linux子系统</title>
+    <link href="https://seule.cn/2018/11/28/windows%2010%20%E7%9A%84Linux%E5%AD%90%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://seule.cn/2018/11/28/windows 10 的Linux子系统/</id>
+    <published>2018-11-28T11:54:11.883Z</published>
+    <updated>2018-11-28T11:52:09.549Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;windows 10在今年 3月份的时候，微软开放了对Linux的接口，让我这个爱好者忍不住体验一发，但一直因为种种原因没能得逞，这件事就一直拖到了现在。前几天不小心执行了一个&lt;code&gt;rm -rf *&lt;/code&gt;系统崩溃（典型的不作死就不会死），就想着要不就直接安装在windows 10 下算了，写篇博客记录一下，以免以后忘了我都干啥了。·
+    
+    </summary>
+    
+      <category term="Ubuntu" scheme="https://seule.cn/categories/Ubuntu/"/>
+    
+      <category term="apt-get" scheme="https://seule.cn/categories/Ubuntu/apt-get/"/>
+    
+      <category term="软件安装" scheme="https://seule.cn/categories/Ubuntu/apt-get/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+    
+      <category term="windows" scheme="https://seule.cn/tags/windows/"/>
+    
+      <category term="Linux" scheme="https://seule.cn/tags/Linux/"/>
+    
+      <category term="系统" scheme="https://seule.cn/tags/%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>apt-get 软件安装那些事儿</title>
@@ -250,9 +278,9 @@
     
       <category term="SHELL" scheme="https://seule.cn/tags/SHELL/"/>
     
-      <category term="编程" scheme="https://seule.cn/tags/%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="脚本" scheme="https://seule.cn/tags/%E8%84%9A%E6%9C%AC/"/>
+    
+      <category term="编程" scheme="https://seule.cn/tags/%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
