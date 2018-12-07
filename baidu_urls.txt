@@ -1,3 +1,4 @@
+https://seule.cn/2018/12/07/python_2和python_3的区别/
 https://seule.cn/2018/11/28/windows 10 的Linux子系统/
 https://seule.cn/2018/11/28/apt-get 软件安装那些事儿/
 https://seule.cn/2018/11/25/python_os_time/
