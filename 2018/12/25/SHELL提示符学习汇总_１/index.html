@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习,shell,提示符," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Seule" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="学习Linux，怎么能不会命令行呢？本文是对Linux命令行的学习过程记录。">
+<meta name="keywords" content="学习,shell,提示符">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SHELL 提示符学习汇总">
+<meta property="og:url" content="https://seule.cn/2018/12/25/SHELL提示符学习汇总_１/index.html">
+<meta property="og:site_name" content="Seule">
+<meta property="og:description" content="学习Linux，怎么能不会命令行呢？本文是对Linux命令行的学习过程记录。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-16T13:23:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SHELL 提示符学习汇总">
+<meta name="twitter:description" content="学习Linux，怎么能不会命令行呢？本文是对Linux命令行的学习过程记录。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":"flase","async":"flase","transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://seule.cn/2018/12/25/SHELL提示符学习汇总_１/"/>
+
+
+
+
+
+  <title>SHELL 提示符学习汇总 | Seule</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c02f20fcdc952de532242640f262bf9e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Seule</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">A Seule's Personal Blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/jianli" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            个人简历
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://seule.cn/2018/12/25/SHELL提示符学习汇总_１/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="范儿">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Seule">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">SHELL 提示符学习汇总</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-25T13:28:15+08:00">
+                2018-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SHELL/" itemprop="url" rel="index">
+                    <span itemprop="name">SHELL</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SHELL/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SHELL/学习/命令行/" itemprop="url" rel="index">
+                    <span itemprop="name">命令行</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>学习Linux，怎么能不会命令行呢？本文是对Linux命令行的学习过程记录。<a id="more"></a></p>
+<h2 id="简单命令"><a href="#简单命令" class="headerlink" title="简单命令"></a>简单命令</h2><ul>
+<li><p><code>date</code>显示当前时间和日期。 </p>
+</li>
+<li><p><code>df</code> 查看磁盘使用情况。 </p>
+</li>
+<li><p><code>exit</code>结束终端会话。</p>
+</li>
+<li><p><code>pwd</code>打印出当前工作目录名。</p>
+</li>
+<li><p><code>cd</code>更改目录。</p>
+</li>
+<li><p><code>ls</code>列出目录内容。 以<code>.</code>字符开头的文件名是隐藏文件。这仅表示，ls 命令不能列出它们，用 <code>ls -a</code>命令就可以了。</p>
+</li>
+<li><p><code>file</code> 确定文件类型。</p>
+</li>
+<li><p><code>less</code>浏览文件内容。按下 q 按键退出</p>
+</li>
+<li><p><code>file filename</code>打印出文件内容的简单描述。</p>
+</li>
+</ul>
+<h3 id="cd快捷键"><a href="#cd快捷键" class="headerlink" title="cd快捷键"></a>cd快捷键</h3><ul>
+<li><code>cd</code>更改工作目录到你的家目录。</li>
+<li><code>cd-</code>跟改工作目录到先前的工作目录。</li>
+<li><code>cd  ̃user name</code>更改工作目录到用户家目录。</li>
+<li>符号<code>.</code>指的是工作目录，<code>..</code>指的是工作目录的父目录。</li>
+</ul>
+<h3 id="ls快捷指令"><a href="#ls快捷指令" class="headerlink" title="ls快捷指令"></a>ls快捷指令</h3><ul>
+<li><code>-a</code> <code>--all</code> 列出所有文件，甚至包括文件名以圆点开头的默认会被隐藏的隐藏文件。</li>
+<li><code>-d</code> <code>--directory</code> 通常，如果指定了目录名，ls 命令会列出这个目录中的内容,而不是目录本身。把这个选项与 -l 选项结合使用，可以看到所指定目录的详细信息，而不是目录中的内容。</li>
+<li><code>-F</code> <code>-classify</code> 这个选项会在每个所列出的名字后面加上一个指示<br>符。例如，如果名字是目录名，则会加上一个’/’ 字<br>符。</li>
+<li><code>-h</code> <code>--human-readable</code> 当以长格式列出时，以人们可读的格式，而不是以字<br>节数来显示文件的大小。</li>
+<li><code>-l</code> 以长格式显示结果。</li>
+<li><code>-r</code> <code>--reverse</code> 以相反的顺序来显示结果。通常，ls 命令的输出结果<br>按照字母升序排列。</li>
+<li><code>-S</code> 命令输出结果按照文件大小来排序。</li>
+<li><code>-t</code> 按照修改时间来排序。</li>
+</ul>
+<hr>
+<h2 id="操作文件和目录"><a href="#操作文件和目录" class="headerlink" title="操作文件和目录"></a>操作文件和目录</h2><ul>
+<li><p><code>cp</code> 复制文件和目录</p>
+</li>
+<li><p><code>mv</code> 移动/重命名文件和目录</p>
+</li>
+<li><p><code>mkdir</code> 创建目录</p>
+</li>
+<li><p><code>rm</code> 删除文件和目录</p>
+</li>
+<li><p><code>ln</code> 创建硬链接和符号链接</p>
+</li>
+</ul>
+<h3 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h3><ul>
+<li><code>*</code>匹配任意多个字符（包括零个或一个）</li>
+<li><code>?</code> 匹配任意一个字符（不包括零个）</li>
+<li><code>[characters]</code> 匹配任意一个属于字符集中的字符</li>
+<li><code>[!characters]</code> 匹配任意一个不是字符集中的字符</li>
+<li><code>[[:class:]]</code> 匹配任意一个属于指定字符类中的字符</li>
+<li><code>[:alnum:]</code> 匹配任意一个字母或数字</li>
+<li><code>[:alpha:]</code> 匹配任意一个字母</li>
+<li><code>[:digit:]</code> 匹配任意一个数字</li>
+<li><code>[:lower:]</code> 匹配任意一个小写字母</li>
+<li><code>[:upper]</code> 匹配任意一个大写字母</li>
+</ul>
+<h3 id="cp的应用"><a href="#cp的应用" class="headerlink" title="cp的应用"></a>cp的应用</h3><ul>
+<li><code>-a, --archive</code> 复制文件和目录，以及它们的属性，包括所有权和权限。通<br>常，复本具有用户所操作文件的默认属性。</li>
+<li><code>-i, --interactive</code> 在重写已存在文件之前，提示用户确认。如果这个选项不指<br>定，cp 命令会默认重写文件。</li>
+<li><code>-r, --recursive</code> 递归地复制目录及目录中的内容。当复制目录时，需要这个<br>选项（或者 -a 选项）。</li>
+<li><code>-u, --update</code> 当把文件从一个目录复制到另一个目录时，仅复制目标目录<br>中不存在的文件，或者是文件内容新于目标目录中已经存在<br>的文件。</li>
+<li><code>-v, --verbose</code> 显示翔实的命令操作信息。</li>
+</ul>
+<h3 id="mv应用举例"><a href="#mv应用举例" class="headerlink" title="mv应用举例"></a>mv应用举例</h3><ul>
+<li><code>-i --interactive</code> 在重写一个已经存在的文件之前，提示用户确认信息。 如果不指定这个选项，mv 命令会默认重写文件内容。</li>
+<li><code>-u --update</code> 当把文件从一个目录移动另一个目录时，只是移动不存在的文件，或者文件内容新于目标目录相对应文件的内容。</li>
+<li><p><code>-v --verbose</code> 当操作 mv 命令时，显示翔实的操作信息。</p>
+</li>
+<li><p><code>mv file1 file2</code> 移动 file1 到 file2。如果 file2 存在，它的内容会被 file1 的内容重写。 如果 file2 不存在，则创建 file2。 每种情况下，file1 不再存在。</p>
+</li>
+<li><code>mv -i file1 file2</code>除了如果 file2 存在的话，在 file2 被重写之前，用户会得到提示信息外，这个和上面的选项一样。</li>
+<li><code>mv file1 file2 dir1</code> 移动 file1 和 file2 到目录 dir1 中。dir1 必须已经存在。</li>
+<li><code>mv dir1 dir2</code> 如果目录 dir2 不存在，创建目录 dir2，并且移动目录 dir1的内容到目录 dir2 中，同时删除目录 dir1。如果目录 dir2存在，移动目录 dir1（及它的内容）到目录 dir2。</li>
+</ul>
+<h3 id="rm应用"><a href="#rm应用" class="headerlink" title="rm应用"></a>rm应用</h3><ul>
+<li><code>-i, --interactive</code> 在删除已存在的文件前，提示用户确认信息。 如果不指定这个选项，rm 会默默地删除文件</li>
+<li><code>-r, --recursive</code> 递归地删除文件，这意味着，如果要删除一个目录，而此目录又包含子目录，那么子目录也会被删除。要删除一个目录，必须指定这个选项。</li>
+<li><code>-f, --force</code> 忽视不存在的文件，不显示提示信息。这选项颠覆了“–interactive”选项。</li>
+<li><code>-v, --verbose</code> 在执行 rm 命令时，显示翔实的操作信息。</li>
+</ul>
+<h3 id="ln-创建链接"><a href="#ln-创建链接" class="headerlink" title="ln 创建链接"></a>ln 创建链接</h3><p>ln 命令即可创建硬链接，也可以创建符号链接。可以用其中一种方法来使用它：<code>ln file link</code>创建硬链接，和：<code>ln -s item link</code>创建符号链接，“item” 可以是一个文件或是一个目录。</p>
+<hr>
+<h2 id="使用命令"><a href="#使用命令" class="headerlink" title="使用命令"></a>使用命令</h2><ul>
+<li><code>type</code> –说明怎样解释一个命令名</li>
+<li><code>which</code> –显示会执行哪个可执行程序</li>
+<li><code>man</code> –显示命令手册页</li>
+<li><code>apropos</code> –显示一系列适合的命令</li>
+<li><code>info</code> –显示命令 info</li>
+<li><code>whatis</code> –显示一个命令的简洁描述</li>
+<li><code>alias</code> –创建命令别名</li>
+</ul>
+<h3 id="type命令"><a href="#type命令" class="headerlink" title="type命令"></a>type命令</h3><p><code>type</code> 命令是 shell 内部命令，它会显示命令的类别，给出一个特定的命令名（做为参数）。它像这样工作：<code>type command</code>。</p>
+<h3 id="which命令"><a href="#which命令" class="headerlink" title="which命令"></a>which命令</h3><p>为了确定所给定的执行程序的准确位置，使用 <code>which</code>命令：</p>
+<p><code>[me@linuxbox ~]$ which ls</code></p>
+<p><code>/bin/ls</code></p>
+<h3 id="man命令"><a href="#man命令" class="headerlink" title="man命令"></a>man命令</h3><p>许多希望被命令行使用的可执行程序，提供了一个正式的文档，叫做手册或手册页 (manpage)。一个特殊的叫做 man 的分页程序，可用来浏览他们。它是这样使用的：<code>man program</code>。</p>
+<h3 id="appopos命令"><a href="#appopos命令" class="headerlink" title="appopos命令"></a>appopos命令</h3><p><code>apropos</code> －显示适当的命令，也有可能搜索参考手册列表，基于某个关键字的匹配项。输出结果每行的第一个字段是手册页的名字，第二个字段展示章节。注意，man 命令加上“-k” 选项，和 apropos 完成一样的功能。(在手册页搜素关键字)</p>
+<h3 id="whatis命令"><a href="#whatis命令" class="headerlink" title="whatis命令"></a>whatis命令</h3><p><code>whatis</code> 程序显示匹配特定关键字的手册页的名字和一行命令说明。</p>
+<h3 id="info命令"><a href="#info命令" class="headerlink" title="info命令"></a>info命令</h3><p><code>info</code> －显示程序 Info 条目。GNU 项目提供了一个命令程序手册页的替代物，称为 “info”。info 内容可通过 info 阅读器程序读取。info 页是超级链接形式的，和网页很相似。</p>
+<h3 id="alias命令"><a href="#alias命令" class="headerlink" title="alias命令"></a>alias命令</h3><p><code>alias name=&#39;string&#39;</code>创建自己的命令，删除别名使用 unalias 命令。</p>
+<h2 id="重定向—-gt-lt"><a href="#重定向—-gt-lt" class="headerlink" title="重定向—&gt;`&lt;`"></a>重定向—<code>&gt;`</code>&lt;`</h2><p>shell 内部参考标准输入，输出和错误为各自的文件描述符 0，1 和 2。shell 提供了一种表示法来重定向文件，使用文件描述符。</p>
+<ul>
+<li><code>cat</code> －连接文件</li>
+<li><code>sort</code> －排序文本行</li>
+<li><code>uniq</code> －报道或省略重复行</li>
+<li><code>grep</code> －打印匹配行</li>
+<li><code>wc</code> －打印文件中换行符，字，和字节个数</li>
+<li><code>head</code> －输出文件第一部分</li>
+<li><code>tail</code> - 输出文件最后一部分</li>
+<li><code>tee</code> －从 Stdin 读取数据，并同时输出到 Stdout 和文件</li>
+</ul>
+<h3 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a><code>cat</code>命令</h3><p><code>cat</code> 命令读取一个或多个文件，然后复制它们到标准输出，就像这样:<code>cat [file]</code></p>
+<h3 id="管道线"><a href="#管道线" class="headerlink" title="管道线"></a>管道线</h3><p>命令可以从标准输入读取数据，然后再把数据输送到标准输出，命令的这种能力被一个shell 特性所利用，这个特性叫做管道线。使用管道操作符 “|”（竖杠），一个命令的标准输出可以管道到另一个命令的标准输入：<br><code>command1 | command2</code></p>
+<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><p>管道线经常用来对数据完成复杂的操作。有可能会把几个命令放在一起组成一个管道线。通常，以这种方式使用的命令被称为过滤器。过滤器接受输入，以某种方式改变它，然后输出它。举例：<code>ls /bin /usr/bin | sort | less</code></p>
+<h3 id="uniq命令"><a href="#uniq命令" class="headerlink" title="uniq命令"></a>uniq命令</h3><p>uniq 从标准输入或单个文件名参数接受数据有序列表（详情查看 uniq 手册页），默认情况下，从数据列表中删除任何重复行。加<code>-d</code>后显示重复行。</p>
+<h3 id="wc命令"><a href="#wc命令" class="headerlink" title="wc命令"></a>wc命令</h3><p>wc（字计数）命令是用来显示文件所包含的行，字和字节数。</p>
+<h3 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h3><p><code>grep</code> 是个很强大的程序，用来找到文件中的匹配文本。这样使用 grep 命令：<code>grep pattern [file...]</code><br><code>grep</code> 有－对方便的选项：“-i” 导致 grep 忽略大小写当执行搜索时（通常，搜索是大小写敏感的），“-v” 选项会告诉 grep 只打印不匹配的行。</p>
+<h3 id="head-tail命令"><a href="#head-tail命令" class="headerlink" title="head/tail命令"></a>head/tail命令</h3><p>有时候不需要一个命令的所有输出。可能你只想要前几行或者后几行的输出内容。head命令打印文件的前十行，而 tail 命令打印文件的后十行。默认情况下，两个命令都打印十行文本，但是可以通过 “-n” 选项来调整命令打印的行数。</p>
+<h3 id="tee命令"><a href="#tee命令" class="headerlink" title="tee命令"></a>tee命令</h3><p><code>tee</code> 程序从标准输入读入数据，并且同时复制数据到标准输出（允许数据继续随着管道线流动）和一个或多个文件。当在某个中间处理阶段来捕捉一个管道线的内容时，这很有帮助。</p>
+
+      
+    </div>
+    
+    
+    
+
+<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2018/12/25/SHELL提示符学习汇总_１/">SHELL 提示符学习汇总</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 范儿 的个人博客">范儿</a></p>
+  <p><span>发布时间:</span>2018年12月25日 - 13:12</p>
+  <p><span>最后更新:</span>2018年09月16日 - 21:09</p>
+  <p><span>原始链接:</span><a href="/2018/12/25/SHELL提示符学习汇总_１/" title="SHELL 提示符学习汇总">https://seule.cn/2018/12/25/SHELL提示符学习汇总_１/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://seule.cn/2018/12/25/SHELL提示符学习汇总_１/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+
+      
+</div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>^_^</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="范儿 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="范儿 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+            -------------本文结束
+            <i class="fa fa-paw"></i>
+            感谢您的阅读-------------
+        </div>
+    
+</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习/" rel="tag"><i class="fa fa-tag"></i> 学习</a>
+          
+            <a href="/tags/shell/" rel="tag"><i class="fa fa-tag"></i> shell</a>
+          
+            <a href="/tags/提示符/" rel="tag"><i class="fa fa-tag"></i> 提示符</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/25/SHELL 提示符学习汇总_2/" rel="next" title="SHELL 提示符学习汇总_2">
+                <i class="fa fa-chevron-left"></i> SHELL 提示符学习汇总_2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/25/SHELL脚本编程_1/" rel="prev" title="SHELL脚本编程_1">
+                SHELL脚本编程_1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="范儿" />
+            
+              <p class="site-author-name" itemprop="name">范儿</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Seule-Seule" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:f18811010711@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im/user/5b638ae0f265da0fb01889b9" target="_blank" title="掘金">
+                      
+                        <i class="fa fa-fw fa-juejin"></i>掘金</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单命令"><span class="nav-number">1.</span> <span class="nav-text">简单命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cd快捷键"><span class="nav-number">1.1.</span> <span class="nav-text">cd快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ls快捷指令"><span class="nav-number">1.2.</span> <span class="nav-text">ls快捷指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作文件和目录"><span class="nav-number">2.</span> <span class="nav-text">操作文件和目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通配符"><span class="nav-number">2.1.</span> <span class="nav-text">通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cp的应用"><span class="nav-number">2.2.</span> <span class="nav-text">cp的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv应用举例"><span class="nav-number">2.3.</span> <span class="nav-text">mv应用举例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm应用"><span class="nav-number">2.4.</span> <span class="nav-text">rm应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ln-创建链接"><span class="nav-number">2.5.</span> <span class="nav-text">ln 创建链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用命令"><span class="nav-number">3.</span> <span class="nav-text">使用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#type命令"><span class="nav-number">3.1.</span> <span class="nav-text">type命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#which命令"><span class="nav-number">3.2.</span> <span class="nav-text">which命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#man命令"><span class="nav-number">3.3.</span> <span class="nav-text">man命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#appopos命令"><span class="nav-number">3.4.</span> <span class="nav-text">appopos命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#whatis命令"><span class="nav-number">3.5.</span> <span class="nav-text">whatis命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#info命令"><span class="nav-number">3.6.</span> <span class="nav-text">info命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alias命令"><span class="nav-number">3.7.</span> <span class="nav-text">alias命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重定向—-gt-lt"><span class="nav-number">4.</span> <span class="nav-text">重定向—&gt;`&lt;`</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cat命令"><span class="nav-number">4.1.</span> <span class="nav-text">cat命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管道线"><span class="nav-number">4.2.</span> <span class="nav-text">管道线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤器"><span class="nav-number">4.3.</span> <span class="nav-text">过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#uniq命令"><span class="nav-number">4.4.</span> <span class="nav-text">uniq命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wc命令"><span class="nav-number">4.5.</span> <span class="nav-text">wc命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep命令"><span class="nav-number">4.6.</span> <span class="nav-text">grep命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#head-tail命令"><span class="nav-number">4.7.</span> <span class="nav-text">head/tail命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tee命令"><span class="nav-number">4.8.</span> <span class="nav-text">tee命令</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">范儿</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="flase"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="flase"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="flase"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="flase"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

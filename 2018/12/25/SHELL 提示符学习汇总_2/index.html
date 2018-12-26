@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习,shell,提示符," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Seule" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="上一篇更新到重定向命令，后来感觉也没怎么用到那些命令。不过既然是技术博客、为了防止忘记，我还是会把一些不一定会用到的命令记录下来，以备以后查阅！">
+<meta name="keywords" content="学习,shell,提示符">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SHELL 提示符学习汇总_2">
+<meta property="og:url" content="https://seule.cn/2018/12/25/SHELL 提示符学习汇总_2/index.html">
+<meta property="og:site_name" content="Seule">
+<meta property="og:description" content="上一篇更新到重定向命令，后来感觉也没怎么用到那些命令。不过既然是技术博客、为了防止忘记，我还是会把一些不一定会用到的命令记录下来，以备以后查阅！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-16T13:22:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SHELL 提示符学习汇总_2">
+<meta name="twitter:description" content="上一篇更新到重定向命令，后来感觉也没怎么用到那些命令。不过既然是技术博客、为了防止忘记，我还是会把一些不一定会用到的命令记录下来，以备以后查阅！">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":"flase","async":"flase","transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://seule.cn/2018/12/25/SHELL 提示符学习汇总_2/"/>
+
+
+
+
+
+  <title>SHELL 提示符学习汇总_2 | Seule</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c02f20fcdc952de532242640f262bf9e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Seule</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">A Seule's Personal Blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/jianli" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            个人简历
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://seule.cn/2018/12/25/SHELL 提示符学习汇总_2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="范儿">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Seule">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">SHELL 提示符学习汇总_2</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-25T13:28:15+08:00">
+                2018-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SHELL/" itemprop="url" rel="index">
+                    <span itemprop="name">SHELL</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SHELL/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SHELL/学习/命令行/" itemprop="url" rel="index">
+                    <span itemprop="name">命令行</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>上一篇更新到重定向命令，后来感觉也没怎么用到那些命令。不过既然是技术博客、为了防止忘记，我还是会把一些不一定会用到的命令记录下来，以备以后查阅！<a id="more"></a></p>
+<h2 id="键盘高级操作技巧"><a href="#键盘高级操作技巧" class="headerlink" title="键盘高级操作技巧"></a>键盘高级操作技巧</h2><ul>
+<li>clear -清空屏幕</li>
+<li>history -显示历史列表内容</li>
+</ul>
+<h3 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h3><ul>
+<li><code>Ctrl-a</code> 移动光标到行首。</li>
+<li><code>Ctrl-e</code> 移动光标到行尾。</li>
+<li><code>94Ctrl-f</code> 光标前移一个字符;和右箭头作用一样。</li>
+<li><code>Ctrl-b</code> 光标后移一个字符;和左箭头作用一样。</li>
+<li><code>Alt-f</code> 光标前移一个字。</li>
+<li><code>Alt-b</code> 光标后移一个字。</li>
+<li><code>Ctrl-l</code> 清空屏幕,移动光标到左上角。clear 命令完成同样的工作。</li>
+</ul>
+<h3 id="修改文本"><a href="#修改文本" class="headerlink" title="修改文本"></a>修改文本</h3><ul>
+<li><code>Ctrl-d</code> 删除光标位置的字符。</li>
+<li><code>Ctrl-t</code> 光标位置的字符和光标前面的字符互换位置。</li>
+<li><code>Alt-t</code> 光标位置的字和其前面的字互换位置。</li>
+<li><code>Alt-l</code> 把从光标位置到字尾的字符转换成小写字母。</li>
+<li><code>Alt-u</code> 把从光标位置到字尾的字符转换成大写字母。</li>
+</ul>
+<h3 id="剪切和粘贴文本"><a href="#剪切和粘贴文本" class="headerlink" title="剪切和粘贴文本"></a>剪切和粘贴文本</h3><ul>
+<li><code>Ctrl-k</code> 剪切从光标位置到行尾的文本。</li>
+<li><code>Ctrl-u</code> 剪切从光标位置到行首的文本。</li>
+<li><code>Alt-d</code> 剪切从光标位置到词尾的文本。</li>
+<li><code>Alt-Backspace</code> 剪切从光标位置到词头的文本。如果光标在一个单词的开头,剪切前一个单词。</li>
+<li><code>Ctrl-y</code>把剪切环中的文本粘贴到光标位置。</li>
+</ul>
+<h3 id="利用历史命令"><a href="#利用历史命令" class="headerlink" title="利用历史命令"></a>利用历史命令</h3><ul>
+<li><code>history | less</code>浏览历史命令(在默认情况下,bash 会存储你所输入的最后 500 个命令)</li>
+<li>bash 也具有按递增顺序来搜索历史列表的能力。这意味着随着字符的输入,我们可以告诉 bash 去搜索历史列表,每一个附加字符都进一步提炼我们的搜索。启动递增搜索,<br>输入 Ctrl-r,其后输入你要寻找的文本。当你找到它以后,你可以敲入 Enter 来执行命令,或者输入 Ctrl-j,从历史列表中复制这一行到当前命令行。再次输入 Ctrl-r,来找到下一个匹配项(向上移动历史列表)。输入 Ctrl-g 或者 Ctrl-c,退出搜索<h4 id="历史命令展开"><a href="#历史命令展开" class="headerlink" title="历史命令展开"></a>历史命令展开</h4></li>
+<li><code>!!</code>重复最后一次执行的命令。可能按下上箭头按键和 enter 键更容易些。</li>
+<li><code>!number</code> 重复历史列表中第 number 行的命令。</li>
+<li><code>!string</code> 重复最近历史列表中,以这个字符串开头的命令。</li>
+<li><code>!?string</code> 重复最近历史列表中,包含这个字符串的命令。</li>
+</ul>
+<h2 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h2><p>（<em>我喜欢Linux是因为这个系统主动性强，权限控制好，所以这一章看的我头皮发麻</em>）</p>
+<ul>
+<li><code>id</code> –显示用户身份号</li>
+<li><code>chmod</code> –更改文件模式</li>
+<li><code>umask</code> –设置默认的文件权限</li>
+<li><code>su</code> –以另一个用户的身份来运行 shell</li>
+<li><code>sudo</code> –以另一个用户的身份来执行命令</li>
+<li><code>chown</code> –更改文件所有者</li>
+<li><code>chgrp</code> –更改文件组所有权</li>
+<li><code>passwd</code> –更改用户密码</li>
+</ul>
+<h3 id="读取、写入和执行"><a href="#读取、写入和执行" class="headerlink" title="读取、写入和执行"></a>读取、写入和执行</h3><p>-rw-rw-r– _1 _me_me_0_ 2008-03-06 14:52 foo.txt</p>
+<ul>
+<li><code>-</code> 一个普通文件</li>
+<li><code>d</code> 一个目录</li>
+<li><code>l</code>一个符号链接。注意对于符号链接文件,剩余的文件属性总是”rwxrwxrwx”,而且都是虚拟值。真正的文件属性是指符号链接所指向的文件的属性。</li>
+<li><code>c</code>一个字符设备文件。这种文件类型是指按照字节流,来处理数据的设备。比如说终端机,或者调制解调器</li>
+<li><code>b</code>一个块设备文件。这种文件类型是指按照数据块,来处理数据的设备,例如一个硬盘,或者 CD-ROM 盘。</li>
+<li>剩下的九个字符,叫做文件模式,代表着文件所有者,文件组所有者,和其他人的读,写,<br>执行权限。</li>
+</ul>
+<h3 id="chmod-更改文件模式"><a href="#chmod-更改文件模式" class="headerlink" title="chmod -更改文件模式"></a>chmod -更改文件模式</h3><p>更改文件或目录的模式(权限),可以利用 chmod 命令。注意只有文件的所有者或者超级用户才能更改文件或目录的模式。chmod 命令支持两种不同的方法来改变文件模式:八进制数字表示法,或符号表示法。</p>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>000</th>
+<th>-–</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>001</td>
+<td>–x</td>
+</tr>
+<tr>
+<td>2</td>
+<td>010</td>
+<td>-w-</td>
+</tr>
+<tr>
+<td>3</td>
+<td>011</td>
+<td>-wx</td>
+</tr>
+<tr>
+<td>4</td>
+<td>100</td>
+<td>r–</td>
+</tr>
+<tr>
+<td>5</td>
+<td>101</td>
+<td>r-x</td>
+</tr>
+<tr>
+<td>6</td>
+<td>110</td>
+<td>rw-</td>
+</tr>
+<tr>
+<td>7</td>
+<td>111</td>
+<td>rwx</td>
+</tr>
+</tbody>
+</table>
+<p>通过使用 3 个八进制数字,我们能够设置文件所有者,用户组,和其他人的权限.</p>
+<p>chmod 命令支持一种符号表示法,来指定文件模式。符号表示法分为三部分:更改会影响谁,要执行哪个操作,要设置哪种权限。通过字符“u”,“g”,“o”,和“a”的组合来指定要影响的对象,如下所示:</p>
+<ul>
+<li><code>u</code> ”user” 的简写,意思是文件或目录的所有者。</li>
+<li><code>g</code> 用户组。</li>
+<li><code>o</code> ”others” 的简写,意思是其他所有的人。</li>
+<li><code>a</code> ”all” 的简写,是”u”, ”g” 和“o”三者的联合。<br>如果没有指定字符,则假定使用 “all”。执行的操作可能是一个“+”字符,表示加上一个权限,一个“-”,表示删掉一个权限,或者是一个“=”,表示只有指定的权限可用,其它所有的权限被删除。<br>权限由“r”,“w”,和“x”来指定。这里是一些符号表示法的举例：</li>
+<li><code>u+x</code> 为文件所有者添加可执行权限。</li>
+<li><code>u-x</code> 删除文件所有者的可执行权限。</li>
+<li><code>+x</code> 为文件所有者,用户组,和其他所有人添加可执行权限。等价于 a+x。</li>
+<li><code>o-rw</code> 除了文件所有者和用户组,删除其他人的读权限和写权限。</li>
+<li><code>go=rw</code> 给群组的主人和任意文件拥有者的人读写权限。如果群组的主人或全局之前已经有了执行的权限,他们将被移除。</li>
+<li><code>u+x</code>、<code>go=rw</code> 给文件拥有者执行权限并给组和其他人读和执行的权限。多种设定可以用逗号分开。</li>
+</ul>
+<h3 id="更改身份"><a href="#更改身份" class="headerlink" title="更改身份"></a>更改身份</h3><ul>
+<li>注销系统并以其他用户身份重新登录系统。</li>
+<li>使用 su 命令。 -以其他用户身份和组 ID 运行一个 shell</li>
+<li>使用 sudo 命令。以另一个用户身份执行命令</li>
+</ul>
+<h3 id="chown-更改文件所有者和用户组"><a href="#chown-更改文件所有者和用户组" class="headerlink" title="chown -更改文件所有者和用户组"></a>chown -更改文件所有者和用户组</h3><p><code>chown</code> 命令被用来更改文件或目录的所有者和用户组。使用这个命令需要超级用户权限。chown 命令的语法:<br><code>chown [owner][:[group]] file...</code></p>
+<ul>
+<li><code>bob</code>把文件所有者从当前属主更改为用户 bob</li>
+<li><code>bob:users</code>把文件所有者改为用户 bob,文件用户组改为用户组 users</li>
+<li><code>:admins</code>把文件用户组改为组 admins,文件所有者不变</li>
+<li><code>bob:</code>文件所有者改为用户 bob,文件用户组改为,用户 bob 登录系统时,所属的用户组</li>
+</ul>
+<h3 id="chgrp-更改用户组所有权"><a href="#chgrp-更改用户组所有权" class="headerlink" title="chgrp -更改用户组所有权"></a>chgrp -更改用户组所有权</h3><p>在旧版 Unix 系统中,chown 命令只能更改文件所有权,而不是用户组所有权。为了达到目的,使用一个独立的命令,chgrp 来完成。除了限制多一点之外,chgrp 命令与 chown 命令使用起来很相似。</p>
+<h3 id="更改用户密码"><a href="#更改用户密码" class="headerlink" title="更改用户密码"></a>更改用户密码</h3><p>使用 passwd 命令,来设置或更改用户密码。命令语法:<br><code>passwd [user]</code><br><em>passwd 命令将会试着强迫你使用“强”密码。这意味着,它会拒绝接受太短的密码,与先前相似的密码,字典中的单词作为密码,或者是太容易猜到的密码</em></p>
+<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><ul>
+<li>ps –报告当前进程快照</li>
+<li>top –显示任务</li>
+<li>jobs –列出活跃的任务</li>
+<li>bg –把一个任务放到后台执行</li>
+<li>fg –把一个任务放到前台执行</li>
+<li>kill –给一个进程发送信号</li>
+<li>killall –杀死指定名字的进程</li>
+<li>shutdown –关机或重启系统</li>
+</ul>
+<h3 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h3><p>比较常用的是ps命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[me@linuxbox ~]$ ps</span><br><span class="line">PID TTY</span><br><span class="line">TIME CMD</span><br><span class="line">5198 pts/1 00:00:00 bash</span><br><span class="line">10129 pts/1 00:00:00 ps</span><br></pre></td></tr></table></figure></p>
+<p>TTY 是 “Teletype” 的简写,是指进程的控制终端。这里,Unix 展示它的年龄。TIME 字段表示进程所消耗的 CPU 时间数量。<br>如果给 ps 命令加上选项,我们可以得到更多关于系统运行状态的信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[me@linuxbox ~]$ ps x</span><br><span class="line">PID TTY STAT TIME COMMAND</span><br><span class="line">2799 ? Ssl 0:00 /usr/libexec/bonobo-activation-server – ac</span><br><span class="line">2820 ? Sl 0:01 /usr/libexec/evolution-data-server-1.10 --</span><br><span class="line">and many more..</span><br></pre></td></tr></table></figure></p>
+<h3 id="用-top-命令动态查看进程"><a href="#用-top-命令动态查看进程" class="headerlink" title="用 top 命令动态查看进程"></a>用 top 命令动态查看进程</h3><p>虽然 ps 命令能够展示许多计算机运行状态的信息,但是它只是提供,ps 命令执行时刻的机器状态快照。为了看到更多动态的信息,我们使用 top 命令:<br><code>[me@linuxbox ~]$ top</code><br>top 程序连续显示系统进程更新的信息(默认情况下,每三分钟更新一次),“top” 这个名字来源于这个事实,top 程序是用来查看系统中“顶端”进程的。top 显示结果由两部分组成:最上面是系统概要,下面是进程列表,以 CPU 的使用率排序。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">top - 14:59:20 up 6:30, 2 users, load average: 0.07, 0.02, 0.00</span><br><span class="line">Tasks: 109 total,</span><br><span class="line">1 running,</span><br><span class="line">106 sleeping,</span><br><span class="line">0 stopped,</span><br><span class="line">2 zombie</span><br><span class="line">Cpu(s): 0.7%us, 1.0%sy, 0.0%ni, 98.3%id, 0.0%wa, 0.0%hi, 0.0%si</span><br><span class="line">Mem: 319496k total, 314860k used, 4636k free,</span><br><span class="line">Swap: 875500k total, 149128k used, 726372k free,</span><br><span class="line">PID</span><br><span class="line">6244</span><br><span class="line">USER PR NI VIRT RES SHR</span><br><span class="line">me 39 19 31752 3124 2188</span><br><span class="line">S %CPU</span><br><span class="line">S</span><br><span class="line">6.3</span><br><span class="line">19392k buff</span><br><span class="line">114676k cach</span><br><span class="line">%MEM</span><br><span class="line">1.0</span><br><span class="line">TIME+</span><br><span class="line">16:24.42 trackerd</span><br><span class="line">....</span><br></pre></td></tr></table></figure></p>
+<p>其中系统概要包含许多有用信息。下表是对系统概要的说明:</p>
+<table>
+<thead>
+<tr>
+<th>行号</th>
+<th>字段</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>top</td>
+<td>程序名</td>
+</tr>
+<tr>
+<td></td>
+<td>14:59:20</td>
+<td>当前时间</td>
+</tr>
+<tr>
+<td></td>
+<td>up 6:30</td>
+<td>这是正常运行时间。它是计算机从上次启动到现在所运行的时间。在这个例子里,系统已经运行了六个半小时</td>
+</tr>
+<tr>
+<td></td>
+<td>2users</td>
+<td>有两个用户登录系统</td>
+</tr>
+<tr>
+<td></td>
+<td>load average:</td>
+<td>加载平均值是指,等待运行的进程数目,也就是说,处于运行状态的进程个数,这些进程共享 CPU。展示了三个数值,每个数值对应不同的时间周期。第一个是最后 60 秒的平均值,下一个是前 5 分钟的平均值,最后一个是前 15 分钟的平均值。若平均值低于 1.0,则指示计算机工作不忙碌</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Tasks:</td>
+<td>总结了进程数目和各种进程状态</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cpu(s):</td>
+<td>这一行描述了 CPU 正在执行的进程的特性</td>
+</tr>
+<tr>
+<td></td>
+<td>0.7%us</td>
+<td>0.7% of the CPU is being used for user processes. 这意味着进程在内核之外</td>
+</tr>
+<tr>
+<td></td>
+<td>1.0%sy</td>
+<td>1.0% 的 CPU 时间被用于系统(内核)进程</td>
+</tr>
+<tr>
+<td></td>
+<td>0.0%ni</td>
+<td>0.0% 的 CPU 时间被用于”nice”(低优先级)进程</td>
+</tr>
+<tr>
+<td></td>
+<td>98.3%id</td>
+<td>98.3% 的 CPU 时间是空闲的</td>
+</tr>
+<tr>
+<td></td>
+<td>0.0%wa</td>
+<td>0.0% 的 CPU 时间来等待 I/O</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Mem:</td>
+<td>展示物理内存的使用情况</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Swap:</td>
+<td>展示交换分区(虚拟内存)的使用情况</td>
+</tr>
+</tbody>
+</table>
+<p>top 程序接受一系列从键盘输入的命令。两个最有趣的命令是 h 和 q。h,显示程序的帮助屏幕,q,退出 top 程序。</p>
+<h3 id="中断一个进程"><a href="#中断一个进程" class="headerlink" title="中断一个进程"></a>中断一个进程</h3><p>在一个终端中,输入 Ctrl-c,中断一个程序。这意味着,我们礼貌地要求终止这个程序。通过这个技巧,许多(但不是全部)命令行程序可以被中断。</p>
+<h3 id="把一个进程放置到后台-执行"><a href="#把一个进程放置到后台-执行" class="headerlink" title="把一个进程放置到后台 (执行)"></a>把一个进程放置到后台 (执行)</h3><p>把终端看作是一个有前台(表层放置可见的事物,像 shell 提示符)和后台(表层之下放置隐藏的事物)(的设备)。启动一个程序,让它立即在后台运行,我们在程序命令之后,加上 “&amp;” 字符.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[me@linuxbox ~]$ xlogo &amp;</span><br><span class="line">[1] 28236</span><br><span class="line">[me@linuxbox ~]$</span><br></pre></td></tr></table></figure></p>
+<p>执行命令之后,这个 xlogo 窗口出现,并且 shell 提示符返回,同时打印一些有趣的数字。这条信息是 shell 特性的一部分,叫做工作控制。通过这条信息,shell 告诉我们,已经启动了工作号为 1(“[1]”),PID 为 28236 的程序。<br>工作控制,这个 shell 功能可以列出从终端中启动的任务。执行 jobs 命令,我们可以看到这个输出列表:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[me@linuxbox ~]$ jobs</span><br><span class="line">[1]+ Running</span><br><span class="line">xlogo &amp;</span><br></pre></td></tr></table></figure></p>
+<h3 id="进程返回到前台"><a href="#进程返回到前台" class="headerlink" title="进程返回到前台"></a>进程返回到前台</h3><p>一个在后台运行的进程对一切来自键盘的输入都免疫,也不能用 Ctrl-c 来中断它。使用 fg命令,让一个进程返回前台执行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[me@linuxbox ~]$ jobs</span><br><span class="line">[1]+ Running</span><br><span class="line">xlogo &amp;</span><br><span class="line">[me@linuxbox ~]$ fg %1</span><br><span class="line">xlogo</span><br></pre></td></tr></table></figure></p>
+<p>fg 命令之后,跟随着一个百分号和工作序号(叫做 jobspec)。如果我们只有一个后台任务,那么 jobspec 是可有可无的。输入 Ctrl-c 来终止 xlogo 程序。</p>
+<h3 id="停止一个进程"><a href="#停止一个进程" class="headerlink" title="停止一个进程"></a>停止一个进程</h3><p>有时候,我们想要停止一个进程,而没有终止它。这样会把一个前台进程移到后台等待。输入 Ctrl-z,可以停止一个前台进程。<br>使用 fg 命令,可以恢复已经停止的程序到前台运行,或者用 bg 命令把程序移到后台。</p>
+<h3 id="通过-kill-命令给进程发送信号"><a href="#通过-kill-命令给进程发送信号" class="headerlink" title="通过 kill 命令给进程发送信号"></a>通过 kill 命令给进程发送信号</h3><p>kill 命令被用来给程序发送信号。它最常见的语法形式看起来像这样:<br><code>kill [-signal] PID...</code></p>
+<table>
+<thead>
+<tr>
+<th><code>1</code></th>
+<th><code>HUP</code></th>
+<th>挂起。这是美好往昔的痕迹,那时候终端机通过电话线和调制解调器连接到远端的计算机。这个信号被用来告诉程序,控制的终端机已经“挂起”。通过关闭一个终端会话,可以说明这个信号的作用。发送这个信号到终端机上的前台程序,程序会终止。许多守护进程也使用这个信号,来重新初始化。这意味着,当发送这个信号到一个守护进程后,这个进程会重新启动,并且重新读取它的配置文件。Apache 网络服务器守护进程就是一个例子。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>2</code></td>
+<td><code>INT</code></td>
+<td>中断。实现和 Ctrl-c 一样的功能,由终端发送。通常,它会终止一个程序。</td>
+</tr>
+<tr>
+<td><code>9</code></td>
+<td><code>KILL</code></td>
+<td>杀死。这个信号很特别。鉴于进程可能会选择不同的方式,来处理发送给它的信号,其中也包含忽略信号,这样呢,从不发送 Kill 信号到目标进程。而是内核立即终止这个进程。当一个进程以这种方式终止的时候,它没有机会去做些“清理”工作,或者是保存劳动成果。因为这个原因,把 KILL 信号看作杀手锏,当其它终止信号失败后,再使用它。</td>
+</tr>
+<tr>
+<td><code>15</code></td>
+<td><code>TERM</code></td>
+<td>终止。这是 kill 命令发送的默认信号。如果程序仍然“活着”,可以接受信号,那么这个信号终止。</td>
+</tr>
+<tr>
+<td><code>18</code></td>
+<td><code>CONT</code></td>
+<td>继续。在停止一段时间后,进程恢复运行。</td>
+</tr>
+<tr>
+<td><code>19</code></td>
+<td><code>STOP</code></td>
+<td>停止。这个信号导致进程停止运行,而没有终止。像KILL 信号,它不被发送到目标进程,因此它不能被忽略。</td>
+</tr>
+</tbody>
+</table>
+<p>除了以上列出的 kill 命令最常使用的信号之外,还有一些系统频繁使用的信号。以下是其它一些常用信号列表:</p>
+<table>
+<thead>
+<tr>
+<th><code>３</code></th>
+<th>QUIT</th>
+<th>退出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td>SEGV</td>
+<td>段错误。如果一个程序非法使用内存,就会发送这个信号。也就是说,程序试图写入内存,而这个内存空间是不允许此程序写入的。</td>
+</tr>
+<tr>
+<td>20</td>
+<td>TSTP</td>
+<td>终端停止。当按下 Ctrl-z 组合键后,终端发送这个信号。不像 STOP 信号,TSTP 信号由目标进程接收,且可能被忽略。</td>
+</tr>
+<tr>
+<td>28</td>
+<td>WINCH</td>
+<td>改变窗口大小。当改变窗口大小时,系统会发送这个信号。一些程序,像 top 和 less 程序会响应这个信号,按照新窗口的尺寸,刷新显示的内容。</td>
+</tr>
+</tbody>
+</table>
+<p>呼，写着写着就写不完了。本来打算就写四千字左右的，没想到不小心写了七千、就这样吧，剩下的在写一篇也就差不多完了。好长时间没有写博客了，十天后我要参加计算机考试，可是现在还没学会，加油！你是最棒的！－－范儿</p>
+
+      
+    </div>
+    
+    
+    
+
+<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2018/12/25/SHELL 提示符学习汇总_2/">SHELL 提示符学习汇总_2</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 范儿 的个人博客">范儿</a></p>
+  <p><span>发布时间:</span>2018年12月25日 - 13:12</p>
+  <p><span>最后更新:</span>2018年09月16日 - 21:09</p>
+  <p><span>原始链接:</span><a href="/2018/12/25/SHELL 提示符学习汇总_2/" title="SHELL 提示符学习汇总_2">https://seule.cn/2018/12/25/SHELL 提示符学习汇总_2/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://seule.cn/2018/12/25/SHELL 提示符学习汇总_2/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+
+      
+</div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>^_^</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="范儿 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="范儿 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+            -------------本文结束
+            <i class="fa fa-paw"></i>
+            感谢您的阅读-------------
+        </div>
+    
+</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习/" rel="tag"><i class="fa fa-tag"></i> 学习</a>
+          
+            <a href="/tags/shell/" rel="tag"><i class="fa fa-tag"></i> shell</a>
+          
+            <a href="/tags/提示符/" rel="tag"><i class="fa fa-tag"></i> 提示符</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/25/Github了解--Git指令/" rel="next" title="Github了解--Git指令">
+                <i class="fa fa-chevron-left"></i> Github了解--Git指令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/25/SHELL提示符学习汇总_１/" rel="prev" title="SHELL 提示符学习汇总">
+                SHELL 提示符学习汇总 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="范儿" />
+            
+              <p class="site-author-name" itemprop="name">范儿</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Seule-Seule" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:f18811010711@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im/user/5b638ae0f265da0fb01889b9" target="_blank" title="掘金">
+                      
+                        <i class="fa fa-fw fa-juejin"></i>掘金</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#键盘高级操作技巧"><span class="nav-number">1.</span> <span class="nav-text">键盘高级操作技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#移动光标"><span class="nav-number">1.1.</span> <span class="nav-text">移动光标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文本"><span class="nav-number">1.2.</span> <span class="nav-text">修改文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#剪切和粘贴文本"><span class="nav-number">1.3.</span> <span class="nav-text">剪切和粘贴文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#利用历史命令"><span class="nav-number">1.4.</span> <span class="nav-text">利用历史命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#历史命令展开"><span class="nav-number">1.4.1.</span> <span class="nav-text">历史命令展开</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权限"><span class="nav-number">2.</span> <span class="nav-text">权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#读取、写入和执行"><span class="nav-number">2.1.</span> <span class="nav-text">读取、写入和执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chmod-更改文件模式"><span class="nav-number">2.2.</span> <span class="nav-text">chmod -更改文件模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改身份"><span class="nav-number">2.3.</span> <span class="nav-text">更改身份</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chown-更改文件所有者和用户组"><span class="nav-number">2.4.</span> <span class="nav-text">chown -更改文件所有者和用户组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chgrp-更改用户组所有权"><span class="nav-number">2.5.</span> <span class="nav-text">chgrp -更改用户组所有权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改用户密码"><span class="nav-number">2.6.</span> <span class="nav-text">更改用户密码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程"><span class="nav-number">3.</span> <span class="nav-text">进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看进程"><span class="nav-number">3.1.</span> <span class="nav-text">查看进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用-top-命令动态查看进程"><span class="nav-number">3.2.</span> <span class="nav-text">用 top 命令动态查看进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中断一个进程"><span class="nav-number">3.3.</span> <span class="nav-text">中断一个进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把一个进程放置到后台-执行"><span class="nav-number">3.4.</span> <span class="nav-text">把一个进程放置到后台 (执行)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程返回到前台"><span class="nav-number">3.5.</span> <span class="nav-text">进程返回到前台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#停止一个进程"><span class="nav-number">3.6.</span> <span class="nav-text">停止一个进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-kill-命令给进程发送信号"><span class="nav-number">3.7.</span> <span class="nav-text">通过 kill 命令给进程发送信号</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">范儿</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="flase"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="flase"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="flase"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="flase"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
